@@ -37,7 +37,7 @@ class KelurahanSeeder extends Seeder
         Kelurahan::create([
             'nama_kelurahan' => 'Siti Rejo-II',
             'nip_lurah' => '19890614 201206 1 001',
-            'nama_lurah' => 'Dr. . ZULKIFLI SYAHPUTRA PULUNGAN, S.STP, M.AP',
+            'nama_lurah' => 'Dr. ZULKIFLI SYAHPUTRA PULUNGAN, S.STP, M.AP',
             'id_kecamatan' => 1,
         ]);
         
