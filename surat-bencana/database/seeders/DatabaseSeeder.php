@@ -24,5 +24,11 @@ class DatabaseSeeder extends Seeder
         $this->call([
             KelurahanSeeder::class,
         ]);
+        $this->call([
+            BencanaSeeder::class,
+        ]);
+        $this->call([
+            BantuanSeeder::class,
+        ]);
     }
 }

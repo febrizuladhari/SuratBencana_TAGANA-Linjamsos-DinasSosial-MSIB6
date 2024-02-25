@@ -10,6 +10,7 @@ class Keluarga extends Model
     use HasFactory;
     protected $fillable = [
 
+        'id',
         'no_kk',
         'nik',
         'created_at',

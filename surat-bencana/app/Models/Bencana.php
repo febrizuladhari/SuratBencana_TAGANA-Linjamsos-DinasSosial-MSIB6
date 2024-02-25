@@ -10,9 +10,9 @@ class Bencana extends Model
     use HasFactory;
     protected $fillable = [
 
-        'id_bencana',
+        'id',
         'jns_bencana',
-        'id_keluarahan',
+        'id_kelurahan',
         'created_at',
         'updated_at'
     ];

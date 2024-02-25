@@ -10,9 +10,9 @@ class Bantuan extends Model
     use HasFactory;
     protected $fillable = [
 
-        'id_bantuan',
+        'id',
         'jns_bantuan',
-        'id_keluarahan',
+        'id_kelurahan',
         'created_at',
         'updated_at'
     ];

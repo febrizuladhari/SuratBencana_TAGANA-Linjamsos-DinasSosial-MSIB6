@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('keluargas', function (Blueprint $table) {
             $table->id();
-            $table->string('no_kk')->unique();
-            $table->string('nik')->unique();
+            $table->char('no_kk', 16)->unique();
+            $table->char('nik', 16);
             $table->timestamps();
         });
     }

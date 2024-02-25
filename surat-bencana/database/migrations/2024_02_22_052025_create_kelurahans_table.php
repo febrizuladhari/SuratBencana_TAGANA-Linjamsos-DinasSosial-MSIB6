@@ -14,10 +14,10 @@ return new class extends Migration
         Schema::create('kelurahans', function (Blueprint $table) {
             $table->id();
             $table->string('nama_kelurahan');
-            $table->string('nip_lurah');
+            $table->char('nip_lurah');
             $table->string('nama_lurah');
             $table->unsignedBigInteger('id_kecamatan')->nullable();
-            $table->foreign('id_kecamatan')->references('id')->on('kecamatans');
+            $table->foreign('id_kecamatan')->references('id')->on('kecamatans')->onUpdate('CASCADE');
             $table->timestamps();
         });
     }

@@ -12,24 +12,21 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('identitas', function (Blueprint $table) {
-            $table->id();
-            $table->string('nik')->unique();
+            $table->char('nik', 16)->unique();
             $table->string('nama');
-            $table->string('status');
+            $table->enum('status', ['Kepala Keluarga', 'Istri', 'Anak', 'Anggota Lain']);
             $table->integer('usia');
-            $table->string('jns_kelamin');
-            $table->unsignedBigInteger('id_kehamilan')->nullable();
-            $table->foreign('id_kehamilan')->references('id')->on('kehamilans');
+            $table->enum('jns_kelamin', ['Pria', 'Wanita']);
+            $table->enum('kehamilan', ['Hamil', 'Tidak Hamil']);
             $table->text('alamat');
-            $table->string('no_kk')->unique();
+            $table->char('id_keluarga', 16)->unique();
+            $table->foreign('id_keluarga')->references('no_kk')->on('keluargas')->onUpdate('CASCADE');
             $table->unsignedBigInteger('id_kelurahan')->nullable();
-            $table->foreign('id_kelurahan')->references('id')->on('kelurahans');
-            $table->unsignedBigInteger('id_kecamatan')->nullable();
-            $table->foreign('id_kecamatan')->references('id')->on('kecamatans');
+            $table->foreign('id_kelurahan')->references('id')->on('kelurahans')->onUpdate('CASCADE');
             $table->unsignedBigInteger('id_bantuan')->nullable();
-            $table->foreign('id_bantuan')->references('id')->on('bantuans');
+            $table->foreign('id_bantuan')->references('id')->on('bantuans')->onUpdate('CASCADE');
             $table->unsignedBigInteger('id_bencana')->nullable();
-            $table->foreign('id_bencana')->references('id')->on('bencanas');
+            $table->foreign('id_bencana')->references('id')->on('bencanas')->onUpdate('CASCADE');
             $table->date('tanggal_bencana');
             $table->timestamps();
         });

@@ -15,36 +15,25 @@ class Identitas extends Model
         'status',
         'usia',
         'jns_kelamin',
-        'id_kehamilan',
+        'kehamilan',
         'alamat',
-        'no_kk',
+        'id_keluarga',
         'id_kelurahan',
-        'id_kecamatan',
         'id_bantuan',
-        'jenis_bencana',
-        'tanggal bencana',
+        'id_bencana',
+        'tanggal_bencana',
         'created_at',
         'updated_at'
     ];
 
-    public function kehamilan()
-    {
-        return $this->belongsTo(Kehamilan::class, 'id_kehamilan', 'id_kehamilan');
-    }
-
     public function keluarga()
     {
-        return $this->belongsTo(Keluarga::class, 'no_kk', 'no_kk');
+        return $this->belongsTo(Keluarga::class, 'id_keluarga', 'id_keluarga');
     }
 
     public function kelurahan()
     {
         return $this->belongsTo(Kelurahan::class, 'id_kelurahan', 'id_kelurahan');
-    }
-
-    public function kecamatan()
-    {
-        return $this->belongsTo(Kecamatan::class, 'id_kecamatan', 'id_kecamatan');
     }
 
     public function bantuan()

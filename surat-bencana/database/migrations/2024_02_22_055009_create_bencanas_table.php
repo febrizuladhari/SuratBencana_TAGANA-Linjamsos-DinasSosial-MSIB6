@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('jns_bencana');
             $table->unsignedBigInteger('id_kelurahan')->nullable();
-            $table->foreign('id_kelurahan')->references('id')->on('kelurahans');
+            $table->foreign('id_kelurahan')->references('id')->on('kelurahans')->onUpdate('CASCADE');
             $table->timestamps();
         });
     }
