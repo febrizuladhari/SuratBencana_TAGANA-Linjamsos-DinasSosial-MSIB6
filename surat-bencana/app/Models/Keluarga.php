@@ -12,8 +12,14 @@ class Keluarga extends Model
 
         'id',
         'no_kk',
-        'nik',
+        'alamat',
+        'id_kelurahan',
         'created_at',
         'updated_at'
     ];
+
+    public function kelurahan()
+    {
+        return $this->belongsTo(Kelurahan::class, 'id_kelurahan', 'id_kelurahan');
+    }
 }

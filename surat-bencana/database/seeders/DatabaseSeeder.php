@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+use App\Models\Identitas;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -25,10 +27,17 @@ class DatabaseSeeder extends Seeder
             KelurahanSeeder::class,
         ]);
         $this->call([
+            KeluargaSeeder::class,
+        ]);
+        $this->call([
             BencanaSeeder::class,
         ]);
         $this->call([
             BantuanSeeder::class,
         ]);
+        $this->call([
+            IdentitasSeeder::class,
+        ]);
+
     }
 }

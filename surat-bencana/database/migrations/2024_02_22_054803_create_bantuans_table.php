@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('bantuans', function (Blueprint $table) {
             $table->id();
             $table->string('jns_bantuan');
-            $table->unsignedBigInteger('id_kelurahan')->nullable();
-            $table->foreign('id_kelurahan')->references('id')->on('kelurahans')->onUpdate('CASCADE');
+            $table->unsignedBigInteger('id_bencana')->nullable();
+            $table->foreign('id_bencana')->references('id')->on('bencanas')->onUpdate('CASCADE');
             $table->timestamps();
         });
     }

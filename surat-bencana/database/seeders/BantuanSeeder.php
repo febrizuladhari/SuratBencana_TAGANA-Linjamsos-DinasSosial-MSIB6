@@ -4,29 +4,34 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 use App\Models\Bantuan;
+use Faker\Factory as Faker;
 
 class BantuanSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
-    public function run(): void
+
+
+    public function run()
     {
-        Bantuan::create([
-            'jns_bantuan' => 'Paket Sandang',
-        ]);
+        // \DB::table('bantuans');
+        // $posts=[];
 
-        Bantuan::create([
-            'jns_bantuan' => 'Buffer Stock',
-        ]);
+        $bantuan = ['Paket Sandang', 'Buffer Stock', 'Permakanan', 'Bansos'];
+        $faker = Faker::create('id_ID');
 
-        Bantuan::create([
-            'jns_bantuan' => 'Permakanan',
-        ]);
+        for ($i = 0; $i <= 70; $i++) {
 
-        Bantuan::create([
-            'jns_bantuan' => 'Bansos',
-        ]);
+            DB::table('bantuans')->insert([
+                'jns_bantuan' => $faker->randomElement($bantuan),
+                'id_bencana' => $faker->numberBetween(1, 30),
+                'created_at' => now(),
+                'updated_at' => now(),
+            ]);
+        }
+        // \DB::table('bantuans')->insert($posts);
     }
 }

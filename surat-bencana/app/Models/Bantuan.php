@@ -12,13 +12,13 @@ class Bantuan extends Model
 
         'id',
         'jns_bantuan',
-        'id_kelurahan',
+        'id_bencana',
         'created_at',
         'updated_at'
     ];
 
-    public function kelurahan()
+    public function bencana()
     {
-        return $this->belongsTo(Kelurahan::class, 'id_kelurahan', 'id_kelurahan');
+        return $this->belongsTo(Bencana::class, 'id_bencana', 'id_bencana');
     }
 }

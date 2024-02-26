@@ -10,39 +10,21 @@ class Identitas extends Model
     use HasFactory;
     protected $fillable = [
 
+        'id',
         'nik',
         'nama',
         'status',
         'usia',
         'jns_kelamin',
         'kehamilan',
-        'alamat',
-        'id_keluarga',
-        'id_kelurahan',
-        'id_bantuan',
-        'id_bencana',
-        'tanggal_bencana',
+        'no_kk',
         'created_at',
         'updated_at'
     ];
 
     public function keluarga()
     {
-        return $this->belongsTo(Keluarga::class, 'id_keluarga', 'id_keluarga');
+        return $this->belongsTo(Keluarga::class, 'no_kk', 'no_kk');
     }
 
-    public function kelurahan()
-    {
-        return $this->belongsTo(Kelurahan::class, 'id_kelurahan', 'id_kelurahan');
-    }
-
-    public function bantuan()
-    {
-        return $this->belongsTo(Bantuan::class, 'id_bantuan', 'id_bantuan');
-    }
-
-    public function bencana()
-    {
-        return $this->belongsTo(Bencana::class, 'id_bencana', 'id_bencana');
-    }
 }

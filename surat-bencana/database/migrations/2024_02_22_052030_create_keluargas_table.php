@@ -11,10 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('bencanas', function (Blueprint $table) {
+        Schema::create('keluargas', function (Blueprint $table) {
             $table->id();
-            $table->string('jns_bencana');
-            $table->unsignedBigInteger('id_kelurahan')->nullable();
+            // $table->char('no_kk', 16)->unique();
+            $table->char('no_kk', 2)->index();
+            $table->text('alamat');
+            $table->unsignedBigInteger('id_kelurahan');
             $table->foreign('id_kelurahan')->references('id')->on('kelurahans')->onUpdate('CASCADE');
             $table->timestamps();
         });
@@ -25,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('bencanas');
+        Schema::dropIfExists('keluargas');
     }
 };

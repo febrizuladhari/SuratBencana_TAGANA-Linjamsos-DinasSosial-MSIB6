@@ -12,13 +12,13 @@ class Bencana extends Model
 
         'id',
         'jns_bencana',
-        'id_kelurahan',
+        'id_keluarga',
         'created_at',
         'updated_at'
     ];
 
-    public function kelurahan()
+    public function keluarga()
     {
-        return $this->belongsTo(Kelurahan::class, 'id_kelurahan', 'id_kelurahan');
+        return $this->belongsTo(Keluarga::class, 'id_keluarga', 'id_keluarga');
     }
 }
