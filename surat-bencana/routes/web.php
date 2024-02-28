@@ -49,6 +49,10 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('/kecamatan', [AdminController::class, 'kecamatan'])->name('kecamatan');
         Route::get('/kelurahan', [AdminController::class, 'kelurahan'])->name('kelurahan');
 
+        //Data Laporan
+        Route::get('/laporan-bencana', [LaporanController::class, 'laporanBencana'])->name('laporan-bencana');
+        Route::get('/laporan-keluarga', [LaporanController::class, 'laporanKeluarga'])->name('laporan-keluarga');
+        Route::get('/laporan-jiwa', [LaporanController::class, 'laporanJiwa'])->name('laporan-jiwa');
 
         // Surat Controller
 
@@ -68,6 +72,8 @@ Route::group(['middleware' => ['auth']], function () {
 
 
     });
+
+
 });
 
 

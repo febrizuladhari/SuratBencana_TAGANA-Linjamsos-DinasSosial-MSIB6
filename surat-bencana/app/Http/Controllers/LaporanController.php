@@ -10,10 +10,20 @@ class LaporanController extends Controller
      * Display a listing of the resource.
      */
 
-    public function dataLaporan()
-    {
-        return view('admin.dataLaporan');
-    }
+     public function laporanBencana()
+     {
+         return view('admin.laporanBencana');
+     }
+ 
+     public function laporanKeluarga()
+     {
+         return view('admin.laporanKeluarga');
+     }
+ 
+     public function laporanJiwa()
+     {
+         return view('admin.laporanJiwa');
+     }
 
     public function index()
     {

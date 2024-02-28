@@ -84,7 +84,7 @@ class KelurahanSeeder extends Seeder
         ]);
         
         Kelurahan::create([
-            'nama_kelurahan' => 'Pasal Merah Timur',
+            'nama_kelurahan' => 'Pasar Merah Timur',
             'nip_lurah' => '19790819 201101 1 007',
             'nama_lurah' => 'MUCHTAR HARAHAP, S.Sos',
             'id_kecamatan' => 2,
