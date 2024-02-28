@@ -19,6 +19,6 @@ class Bencana extends Model
 
     public function keluarga()
     {
-        return $this->belongsTo(Keluarga::class, 'id_keluarga', 'id_keluarga');
+        return $this->belongsTo(Keluarga::class, 'id_keluarga', 'id');
     }
 }

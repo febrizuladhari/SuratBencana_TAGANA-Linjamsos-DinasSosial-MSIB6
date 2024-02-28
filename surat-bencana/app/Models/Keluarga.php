@@ -22,4 +22,11 @@ class Keluarga extends Model
     {
         return $this->belongsTo(Kelurahan::class, 'id_kelurahan', 'id_kelurahan');
     }
+
+    public function bencana()
+    {
+        return $this->hasMany(Bencana::class);
+    }
+
+
 }

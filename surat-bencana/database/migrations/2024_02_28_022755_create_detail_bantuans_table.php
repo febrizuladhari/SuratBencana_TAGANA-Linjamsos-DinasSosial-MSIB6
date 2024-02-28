@@ -11,11 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('bantuans', function (Blueprint $table) {
+        Schema::create('detail_bantuans', function (Blueprint $table) {
             $table->id();
-            $table->enum('jns_bantuan', ['Paket Sandang', 'Buffer Stock', 'Permakanan', 'Bansos']);
-            $table->unsignedBigInteger('id_bencana')->nullable();
-            $table->foreign('id_bencana')->references('id')->on('bencanas')->onUpdate('CASCADE');
+            $table->string('deskripsi');
+            $table->integer('jumlah');
+            $table->unsignedBigInteger('id_bantuan')->nullable();
+            $table->foreign('id_bantuan')->references('id')->on('bantuans')->onUpdate('CASCADE');
             $table->timestamps();
         });
     }
@@ -25,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('bantuans');
+        Schema::dropIfExists('detail_bantuans');
     }
 };

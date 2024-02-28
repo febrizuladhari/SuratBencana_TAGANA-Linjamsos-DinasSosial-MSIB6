@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\BencanaController;
 use App\Http\Controllers\SuratController;
 use App\Http\Controllers\PrintController;
 use App\Http\Controllers\LogController;
@@ -45,7 +46,21 @@ Route::group(['middleware' => ['auth']], function () {
 
         Route::get('/data-laporan', [LaporanController::class, 'datalaporan'])->name('data-laporan');
 
-        Route::get('/bencana', [AdminController::class, 'bencana'])->name('bencana');
+        Route::get('/bencana', [BencanaController::class, 'index'])->name('bencana');
+        Route::get('/bencana/{id}/edit', [BencanaController::class, 'edit'])->name('bencana-edit');
+        Route::put('/bencana/{id}', [BencanaController::class, 'update'])->name('bencana-update');
+
+
+// Route::get('/bencana/create', 'BencanaController@create');
+// Route::post('/bencana', 'BencanaController@store');
+
+// Route::get('/bencana/{id}', 'BencanaController@show');
+// Route::get('/bencana/{id}/edit', 'BencanaController@edit');
+// Route::patch('/bencana/{id}', 'BencanaController@update');
+
+// Route::delete('/bencana/{id}', 'BencanaController@destroy');
+
+
         Route::get('/kecamatan', [AdminController::class, 'kecamatan'])->name('kecamatan');
         Route::get('/kelurahan', [AdminController::class, 'kelurahan'])->name('kelurahan');
 
