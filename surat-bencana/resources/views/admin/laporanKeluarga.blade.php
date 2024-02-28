@@ -8,46 +8,42 @@
 
 <!-- Content -->
 @section('content')
-<!-- Page Heading -->
-<h1 class="h3 mb-2 text-gray-800">Data Laporan Keluarga</h1>
-<p class="mb-4">Data laporan keluarga berdasarkan indikator-indikator yang ada.</p>
-
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Data Keluarga</div>
-
-                <div class="card-body">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>No</th>
-                                <th>No. KK</th>
-                                <th>Kepala Keluarga</th>
-                                <th>Alamat</th>
-                                <th>Kelurahan</th>
-                                <th>Kecamatan</th>
-                                <th>Jenis Bencana</th>
-                            </tr>
+<!-- Content -->
+@section('content')
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Data Laporan Berdasarkan Keluarga</h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>No. KK</th>
+                        <th>Kepala Keluarga</th>
+                        <th>Alamat</th>
+                        <th>Kelurahan</th>
+                        <th>Kecamatan</th>
+                        <th>Jenis Bencana</th>
+                    </tr>
                         </thead>
                         <tbody>
-                            {{-- @foreach($dataBencana as $key => $bencana) --}}
+                            @foreach($keluarga as $key => $data)
                             <tr>
-                                {{-- <td>{{ $key + 1 }}</td>
-                                <td>{{ $bencana->kecamatan }}</td>
-                                <td>{{ $bencana->kelurahan }}</td>
-                                <td>{{ $bencana->jenis_bencana }}</td>
-                                <td>{{ $bencana->nomor_kk }}</td> --}}
-                            </tr>
-                            {{-- @endforeach --}}
+                                <td>{{ $key + 1 }}</td>
+                                <td>{{ $data->no_kk }}</td>
+                                <td>{{ $data->nama }}</td>
+                                <td>{{ $data->alamat }}</td>
+                                <td>{{ $data->nama_kelurahan }}</td>
+                                <td>{{ $data->nama_kecamatan }}</td>
+                                <td>{{ $data->jns_bencana }}</td>
+                            </tr>@endforeach
                         </tbody>
                     </table>
                 </div>
             </div>
         </div>
-    </div>
-</div>
 
 @endsection
 

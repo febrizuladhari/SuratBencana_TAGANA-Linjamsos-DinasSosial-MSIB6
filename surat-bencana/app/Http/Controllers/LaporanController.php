@@ -3,6 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Kecamatan;
+use App\Models\Kelurahan;
+use App\Models\Keluarga;
+use App\Models\Identitas;
+use App\Models\Bencana;
 
 class LaporanController extends Controller
 {
@@ -12,17 +17,32 @@ class LaporanController extends Controller
 
      public function laporanBencana()
      {
-         return view('admin.laporanBencana');
+        $bencana = Bencana::join('keluargas', 'bencanas.id_keluarga', '=', 'keluargas.id')
+        -> join('kelurahans', 'keluargas.id_kelurahan', '=', 'kelurahans.id')
+        -> join('kecamatans', 'kelurahans.id_kecamatan', '=', 'kecamatans.id')
+        ->get();
+         return view('admin.laporanBencana', ['bencana' => $bencana,]);
      }
  
      public function laporanKeluarga()
-     {
-         return view('admin.laporanKeluarga');
+     {  
+        $keluarga = Bencana::join('keluargas', 'bencanas.id_keluarga', '=', 'keluargas.id')
+        -> join('identitas', 'keluargas.no_kk', '=', 'identitas.no_kk')
+        -> join('kelurahans', 'keluargas.id_kelurahan', '=', 'kelurahans.id')
+        -> join('kecamatans', 'kelurahans.id_kecamatan', '=', 'kecamatans.id')
+        -> where('identitas.status', '=', 'Kepala Keluarga')
+        -> get();
+         return view('admin.laporanKeluarga', ['keluarga' => $keluarga,]);
      }
  
      public function laporanJiwa()
      {
-         return view('admin.laporanJiwa');
+        $jiwa = Bencana::join('keluargas', 'bencanas.id_keluarga', '=', 'keluargas.id')
+        -> join('identitas', 'keluargas.no_kk', '=', 'identitas.no_kk')
+        -> join('kelurahans', 'keluargas.id_kelurahan', '=', 'kelurahans.id')
+        -> join('kecamatans', 'kelurahans.id_kecamatan', '=', 'kecamatans.id')
+        -> get();
+         return view('admin.laporanJiwa', ['jiwa' => $jiwa,]);
      }
 
     public function index()
