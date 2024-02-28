@@ -23,7 +23,7 @@ use App\Http\Controllers\LaporanController;
 
 
 // Auth Controller
-Route::get('login', [AuthController::class,'index'])->name('login');
+Route::get('/', [AuthController::class,'index'])->name('login');
 Route::post('proses_login', [AuthController::class,'proses_login'])->name('proses_login');
 Route::get('logout', [AuthController::class,'logout'])->name('logout');
 
