@@ -40,7 +40,7 @@
     </li>
 
     <!-- Nav Item - Utilities Collapse Menu -->
-    <li class="nav-item {{ Request::is('bencana', 'kecamatan', 'kelurahan') ? 'active' : '' }}">
+    <li class="nav-item {{ Request::is('bencana', 'kecamatan', 'kelurahan', 'keluarga', 'identitas') ? 'active' : '' }}">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
             aria-expanded="true" aria-controls="collapseUtilities">
             <i class="fas fa-fw fa-edit"></i>
@@ -53,6 +53,8 @@
                 <a class="collapse-item {{ Request::is('bencana') ? 'active' : '' }}" href="{{ route('bencana') }}">Bencana</a>
                 <a class="collapse-item {{ Request::is('kecamatan') ? 'active' : '' }}" href="{{ route('kecamatan') }}">Kecamatan</a>
                 <a class="collapse-item {{ Request::is('kelurahan') ? 'active' : '' }}" href="{{ route('kelurahan') }}">Kelurahan</a>
+                <a class="collapse-item {{ Request::is('keluarga') ? 'active' : '' }}" href="{{ route('keluarga') }}">Keluarga</a>
+                <a class="collapse-item {{ Request::is('identitas') ? 'active' : '' }}" href="{{ route('identitas') }}">Identitas</a>
             </div>
         </div>
     </li>

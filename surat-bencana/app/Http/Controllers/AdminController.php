@@ -29,10 +29,10 @@ class AdminController extends Controller
         return view('admin.bencana');
     }
 
-    public function kecamatan()
-    {
-        return view('admin.kecamatan');
-    }
+    // public function kecamatan()
+    // {
+    //     return view('admin.kecamatan');
+    // }
 
     public function kelurahan()
     {

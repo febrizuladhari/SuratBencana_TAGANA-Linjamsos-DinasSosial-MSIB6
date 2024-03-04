@@ -6,6 +6,9 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BencanaController;
+use App\Http\Controllers\KecamatanController;
+use App\Http\Controllers\KeluargaController;
+use App\Http\Controllers\IdentitasController;
 use App\Http\Controllers\SuratController;
 use App\Http\Controllers\PrintController;
 use App\Http\Controllers\LogController;
@@ -50,6 +53,21 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('/bencana/{id}/edit', [BencanaController::class, 'edit'])->name('bencana-edit');
         Route::put('/bencana/{id}', [BencanaController::class, 'update'])->name('bencana-update');
 
+        //editKecamatan
+        Route::get('/kecamatan', [KecamatanController::class, 'index'])->name('kecamatan');
+        Route::get('/kecamatan/{id}/edit', [KecamatanController::class, 'edit'])->name('kecamatan-edit');
+        Route::put('/kecamatan/{id}', [KecamatanController::class, 'update'])->name('kecamatan-update');
+
+        //editKeluarga
+        Route::get('/keluarga', [KeluargaController::class, 'index'])->name('keluarga');
+        Route::get('/keluarga/{id}/edit', [KeluargaController::class, 'edit'])->name('keluarga-edit');
+        Route::put('/keluarga/{id}', [KeluargaController::class, 'update'])->name('keluarga-update');
+
+        //editIdentitas
+        Route::get('/identitas', [IdentitasController::class, 'index'])->name('identitas');
+        Route::get('/identitas/{id}/edit', [IdentitasController::class, 'edit'])->name('identitas-edit');
+        Route::put('/identitas/{id}', [IdentitasController::class, 'update'])->name('identitas-update');
+
 
 // Route::get('/bencana/create', 'BencanaController@create');
 // Route::post('/bencana', 'BencanaController@store');
@@ -61,7 +79,7 @@ Route::group(['middleware' => ['auth']], function () {
 // Route::delete('/bencana/{id}', 'BencanaController@destroy');
 
 
-        Route::get('/kecamatan', [AdminController::class, 'kecamatan'])->name('kecamatan');
+        // Route::get('/kecamatan', [AdminController::class, 'kecamatan'])->name('kecamatan');
         Route::get('/kelurahan', [AdminController::class, 'kelurahan'])->name('kelurahan');
 
         //Data Laporan
