@@ -41,7 +41,7 @@
     </li>
 
     <!-- Nav Item - Utilities Collapse Menu -->
-    <li class="nav-item {{ Request::is('bencana', 'kecamatan', 'kelurahan', 'bantuan', 'detailBantuan') ? 'active' : '' }}">
+    <li class="nav-item {{ Request::is('identitas', 'keluarga', 'bencana', 'kecamatan', 'kelurahan', 'bantuan', 'detailBantuan') ? 'active' : '' }}">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
             aria-expanded="true" aria-controls="collapseUtilities">
             <i class="fas fa-fw fa-edit"></i>
@@ -51,6 +51,8 @@
             data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Edit Data:</h6>
+                <a style="color: #0c4e23;" class="collapse-item {{ Request::is('identitas') ? 'active' : '' }}" href="{{ route('identitas') }}">Identitas</a>
+                <a style="color: #0c4e23;" class="collapse-item {{ Request::is('keluarga') ? 'active' : '' }}" href="{{ route('keluarga') }}">Keluarga</a>
                 <a style="color: #0c4e23;" class="collapse-item {{ Request::is('bencana') ? 'active' : '' }}" href="{{ route('bencana') }}">Bencana</a>
                 <a style="color: #0c4e23;" class="collapse-item {{ Request::is('kelurahan') ? 'active' : '' }}" href="{{ route('kelurahan') }}">Kelurahan</a>
                 <a style="color: #0c4e23;" class="collapse-item {{ Request::is('kecamatan') ? 'active' : '' }}" href="{{ route('kecamatan') }}">Kecamatan</a>

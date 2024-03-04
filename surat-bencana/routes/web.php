@@ -103,20 +103,6 @@ Route::group(['middleware' => ['auth']], function () {
         Route::put('/identitas/{id}', [IdentitasController::class, 'update'])->name('identitas-update');
 
 
-
-// Route::get('/bencana/create', 'BencanaController@create');
-// Route::post('/bencana', 'BencanaController@store');
-
-// Route::get('/bencana/{id}', 'BencanaController@show');
-// Route::get('/bencana/{id}/edit', 'BencanaController@edit');
-// Route::patch('/bencana/{id}', 'BencanaController@update');
-
-// Route::delete('/bencana/{id}', 'BencanaController@destroy');
-
-
-        // Route::get('/kecamatan', [AdminController::class, 'kecamatan'])->name('kecamatan');
-        // Route::get('/kelurahan', [AdminController::class, 'kelurahan'])->name('kelurahan');
-
         //Data Laporan
         Route::get('/laporan-bencana', [LaporanController::class, 'laporanBencana'])->name('laporan-bencana');
         Route::get('/laporan-keluarga', [LaporanController::class, 'laporanKeluarga'])->name('laporan-keluarga');
