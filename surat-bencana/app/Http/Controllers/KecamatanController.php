@@ -37,7 +37,15 @@ class KecamatanController extends Controller
 
             $kecamatan->save();
 
-            return redirect()->route('kecamatan')->with('success', 'Data bencana berhasil diperbarui.');
+
+        if($kecamatan) {
+            toast('Kecamatan Berhasil Diupdate','success');
+            return redirect()->route('kecamatan')->with('success', 'Data kecamatan berhasil diupdate.');
+        } else {
+            toast('Kecamatan Gagal Diupdate','error');
+            return redirect()->route('kecamatan')->with('success', 'Data kecamatan gagal diupdate.');
+        }
+
         }
 
 

@@ -23,6 +23,8 @@
 
 </head>
 <body>
+    @include('sweetalert::alert')
+
     <section class="ftco-section">
         <div class="d-flex align-items-center">
             <div class="container">

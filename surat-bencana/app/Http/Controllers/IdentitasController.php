@@ -50,7 +50,14 @@ class IdentitasController extends Controller
 
         $identitas->save();
 
-        return redirect()->route('identitas')->with('success', 'Data identitas berhasil diperbarui.');
+        if($identitas) {
+            toast('Identitas Berhasil Diupdate','success');
+            return redirect()->route('identitas')->with('success', 'Data identitas berhasil diupdate.');
+        } else {
+            toast('Identitas Gagal Diupdate','error');
+            return redirect()->route('identitas')->with('success', 'Data identitas gagal diupdate.');
+        }
+
     }
 
     public function create()

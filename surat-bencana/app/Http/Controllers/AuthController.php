@@ -23,12 +23,13 @@ class AuthController extends Controller
         $user = Auth::user();
         if($user){
             if($user->level =='admin'){
-                return redirect()->intended('home');
+                Alert::success('Hi !', 'Selamat Datang');
+                return redirect()->route('home')->with(['success' => 'Selamat Datang']);
             }
             else if($user->level =='user'){
-                return redirect()->intended('home');
+                Alert::success('Hi !', 'Selamat Datang');
+                return redirect()->route('home')->with(['success' => 'Selamat Datang']);
             }
-
         }
         return view('auth.login');
     }
@@ -45,18 +46,19 @@ class AuthController extends Controller
         if(Auth::attempt($credential)){
             $user =  Auth::user();
             if($user->level =='admin'){
-                return redirect()->intended('home');
-
+                Alert::success('Hi !', 'Selamat Datang');
+                return redirect()->route('home')->with(['success' => 'Selamat Datang']);
             }
                 else if($user->level =='user'){
-                return redirect()->intended('home');
+                    Alert::success('Hi !', 'Selamat Datang');
+                    return redirect()->route('home')->with(['success' => 'Selamat Datang']);
             }
-            return redirect()->intended('login');
+            Alert::error('Ups!', 'Maaf, Akun atau Password Anda Salah.');
+            return redirect()->route('login');
         }
 
-        return redirect('login')
-            ->withInput()
-            ->withErrors(['login_gagal'=>'These credentials does not match our records']);
+        Alert::error('Ups!', 'Maaf, Akun atau Password Anda Salah.');
+        return redirect()->route('login');
 
     }
 
@@ -93,7 +95,10 @@ class AuthController extends Controller
         $request->session()->flush();
 
         Auth::logout();
-        return Redirect('/');
+
+        Alert::warning('Bye !', 'Selamat Tinggal');
+        return redirect()->route('login')->with(['success' => 'Selamat Tinggal']);
+        // return Redirect('/');
     }
 
 

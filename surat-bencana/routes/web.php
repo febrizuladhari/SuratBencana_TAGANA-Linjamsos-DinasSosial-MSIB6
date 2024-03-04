@@ -16,6 +16,7 @@ use App\Http\Controllers\KelurahanController;
 use App\Http\Controllers\KecamatanController;
 use App\Http\Controllers\BantuanController;
 use App\Http\Controllers\DetailBantuanController;
+use App\Http\Controllers\ProfileController;
 
 
 /*
@@ -109,6 +110,11 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('/getKelurahan', [IdentitasController::class, 'getKelurahan']);
         Route::get('/getKeluarga', [IdentitasController::class, 'getKeluarga']);
         Route::get('getKehamilan/{selectedStatus}', [IdentitasController::class, 'getKehamilan']);
+
+
+        Route::get('/profile', [ProfileController::class, 'showGantiPassword'])->name('profile');
+        Route::post('/profile', [ProfileController::class, 'gantiPassword'])->name('profile-update');
+
 
 
 

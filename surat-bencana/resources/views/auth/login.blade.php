@@ -23,6 +23,8 @@
 
 </head>
 <body>
+    @include('sweetalert::alert')
+
     <section class="ftco-section">
         <div class="d-flex align-items-center">
             <div class="container">
@@ -60,7 +62,18 @@
                                     <div class="form-group mb-5">
                                         <label class="label" for="password">Password</label>
                                         <input id="password" name="password" type="password" class="form-control" placeholder="Password" required>
+                                        <input type="checkbox" onclick="togglePassword()"> Tampilkan Password
                                     </div>
+                                    <script>
+                                        function togglePassword() {
+                                            var passwordField = document.getElementById("password");
+                                            if (passwordField.type === "password") {
+                                                passwordField.type = "text";
+                                            } else {
+                                                passwordField.type = "password";
+                                            }
+                                        }
+                                        </script>
 
                                     <div class="form-group">
                                         <button type="submit" class="form-control btn btn-primary rounded px-3"><strong>Sign In</strong></button>
