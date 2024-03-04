@@ -39,4 +39,5 @@ class KeluargaController extends Controller
 
             return redirect()->route('keluarga')->with('success', 'Data keluarga berhasil diperbarui.');
         }
-}
+    }
+    

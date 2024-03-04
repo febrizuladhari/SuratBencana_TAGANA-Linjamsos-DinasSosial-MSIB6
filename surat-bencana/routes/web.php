@@ -6,13 +6,17 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BencanaController;
-use App\Http\Controllers\KecamatanController;
 use App\Http\Controllers\KeluargaController;
 use App\Http\Controllers\IdentitasController;
 use App\Http\Controllers\SuratController;
 use App\Http\Controllers\PrintController;
 use App\Http\Controllers\LogController;
 use App\Http\Controllers\LaporanController;
+use App\Http\Controllers\KelurahanController;
+use App\Http\Controllers\KecamatanController;
+use App\Http\Controllers\BantuanController;
+use App\Http\Controllers\DetailBantuanController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -52,6 +56,36 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('/bencana', [BencanaController::class, 'index'])->name('bencana');
         Route::get('/bencana/{id}/edit', [BencanaController::class, 'edit'])->name('bencana-edit');
         Route::put('/bencana/{id}', [BencanaController::class, 'update'])->name('bencana-update');
+        Route::get('/tambahBencana', [BencanaController::class, 'create'])->name('tambahBencana');
+        Route::post('/bencana', [BencanaController::class, 'store'])->name('bencana-store');
+        Route::delete('/bencana/{id}', [BencanaController::class, 'destroy'])->name('bencana-destroy');
+
+        Route::get('/bantuan', [BantuanController::class, 'index'])->name('bantuan');
+        Route::get('/bantuan/{id}/edit', [BantuanController::class, 'edit'])->name('bantuan-edit');
+        Route::put('/bantuan/{id}', [BantuanController::class, 'update'])->name('bantuan-update');
+        Route::post('/bantuan', [BantuanController::class, 'store'])->name('bantuan-store');
+        Route::delete('/bantuan/{id}', [BantuanController::class, 'destroy'])->name('bantuan-destroy');
+        Route::get('/tambahBantuan', [BantuanController::class, 'create'])->name('tambahBantuan');
+        Route::get('/getKelurahan', [BantuanController::class, 'getKelurahan']);
+        Route::get('/getKeluarga', [BantuanController::class, 'getKeluarga']);
+        Route::get('/getBencana', [BantuanController::class, 'getBencana']);
+        Route::get('/getBantuan', [BantuanController::class, 'getBantuan']);
+
+
+        Route::get('/detailBantuan', [DetailBantuanController::class, 'index'])->name('detailBantuan');
+        Route::get('/detailBantuan/{id}/edit', [DetailBantuanController::class, 'edit'])->name('detailBantuan-edit');
+        Route::put('/detailBantuan/{id}', [DetailBantuanController::class, 'update'])->name('detailBantuan-update');
+        Route::get('/tambahDetailBantuan', [DetailBantuanController::class, 'create'])->name('tambahDetailBantuan');
+        Route::delete('/detailBantuan/{id}', [DetailBantuanController::class, 'destroy'])->name('detailBantuan-destroy');
+        Route::post('/detailBantuan/store', [DetailBantuanController::class, 'store'])->name('detailBantuan-store');
+        Route::get('/getKelurahan', [DetailBantuanController::class, 'getKelurahan']);
+        Route::get('/getKeluarga', [DetailBantuanController::class, 'getKeluarga']);
+        Route::get('/getBencana', [DetailBantuanController::class, 'getBencana']);
+        Route::get('/getBantuan', [DetailBantuanController::class, 'getBantuan']);
+
+        Route::get('/kelurahan', [KelurahanController::class, 'index'])->name('kelurahan');
+        Route::get('/kelurahan/{id}/edit', [KelurahanController::class, 'edit'])->name('kelurahan-edit');
+        Route::put('/kelurahan/{id}', [KelurahanController::class, 'update'])->name('kelurahan-update');
 
         //editKecamatan
         Route::get('/kecamatan', [KecamatanController::class, 'index'])->name('kecamatan');
@@ -69,6 +103,7 @@ Route::group(['middleware' => ['auth']], function () {
         Route::put('/identitas/{id}', [IdentitasController::class, 'update'])->name('identitas-update');
 
 
+
 // Route::get('/bencana/create', 'BencanaController@create');
 // Route::post('/bencana', 'BencanaController@store');
 
@@ -80,7 +115,7 @@ Route::group(['middleware' => ['auth']], function () {
 
 
         // Route::get('/kecamatan', [AdminController::class, 'kecamatan'])->name('kecamatan');
-        Route::get('/kelurahan', [AdminController::class, 'kelurahan'])->name('kelurahan');
+        // Route::get('/kelurahan', [AdminController::class, 'kelurahan'])->name('kelurahan');
 
         //Data Laporan
         Route::get('/laporan-bencana', [LaporanController::class, 'laporanBencana'])->name('laporan-bencana');

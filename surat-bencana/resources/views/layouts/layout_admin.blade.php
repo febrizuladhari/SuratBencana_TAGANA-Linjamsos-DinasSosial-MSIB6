@@ -33,6 +33,7 @@
 
         <!-- Sidebar -->
         @include('components.sidebar_admin')
+        @include('sweetalert::alert')
         <!-- End of Sidebar -->
 
         <!-- Content Wrapper -->

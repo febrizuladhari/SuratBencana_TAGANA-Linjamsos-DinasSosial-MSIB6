@@ -17,8 +17,13 @@ class Bantuan extends Model
         'updated_at'
     ];
 
+    public function detailBantuan()
+    {
+        return $this->hasMany(DetailBantuan::class);
+    }
+
     public function bencana()
     {
-        return $this->belongsTo(Bencana::class, 'id_bencana', 'id_bencana');
+        return $this->belongsTo(Bencana::class, 'id_bencana', 'id');
     }
 }

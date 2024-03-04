@@ -8,6 +8,7 @@ use App\Models\Kelurahan;
 use App\Models\Keluarga;
 use App\Models\Identitas;
 use App\Models\Bencana;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class LaporanController extends Controller
 {
@@ -23,9 +24,9 @@ class LaporanController extends Controller
         ->get();
          return view('admin.laporanBencana', ['bencana' => $bencana,]);
      }
- 
+
      public function laporanKeluarga()
-     {  
+     {
         $keluarga = Bencana::join('keluargas', 'bencanas.id_keluarga', '=', 'keluargas.id')
         -> join('identitas', 'keluargas.no_kk', '=', 'identitas.no_kk')
         -> join('kelurahans', 'keluargas.id_kelurahan', '=', 'kelurahans.id')
@@ -34,7 +35,7 @@ class LaporanController extends Controller
         -> get();
          return view('admin.laporanKeluarga', ['keluarga' => $keluarga,]);
      }
- 
+
      public function laporanJiwa()
      {
         $jiwa = Bencana::join('keluargas', 'bencanas.id_keluarga', '=', 'keluargas.id')

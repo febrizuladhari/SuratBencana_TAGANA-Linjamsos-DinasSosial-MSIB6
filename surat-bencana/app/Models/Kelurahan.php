@@ -8,6 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Kelurahan extends Model
 {
     use HasFactory;
+
+    public $table = "kelurahans";
+    public $timestamps = true;
+
     protected $fillable = [
 
         'id',
@@ -21,6 +25,7 @@ class Kelurahan extends Model
 
     public function kecamatan()
     {
-        return $this->belongsTo(Kecamatan::class, 'id_kecamatan', 'id_kecamatan');
+        return $this->belongsTo(Kecamatan::class, 'id_kecamatan', 'id');
     }
+
 }
