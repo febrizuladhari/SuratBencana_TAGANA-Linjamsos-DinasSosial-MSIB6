@@ -18,12 +18,13 @@ class BencanaSeeder extends Seeder
         // \DB::table('bencanas');
         // $posts=[];
 
+        $bencana = ['Kebakaran', 'Banjir', 'Tanah Longsor', 'Badai', 'Gempa Bumi', 'Tsunami', 'Gunung Meletus', 'Puting Beliung'];
         $faker = Faker::create('id_ID');
 
         for ($i = 0; $i <= 30; $i++) {
 
             DB::table('bencanas')->insert([
-                'jns_bencana' => $faker->word(),
+                'jns_bencana' => $faker->randomElement($bencana),
                 'id_keluarga' => $faker->numberBetween(1, 20),
                 'tanggal_bencana' => $faker->date(),
                 'created_at' => now(),

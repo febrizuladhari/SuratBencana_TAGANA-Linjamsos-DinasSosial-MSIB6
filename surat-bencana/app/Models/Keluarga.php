@@ -8,6 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Keluarga extends Model
 {
     use HasFactory;
+
+    protected $table = 'keluargas';
+
     protected $fillable = [
 
         'id',
@@ -20,12 +23,17 @@ class Keluarga extends Model
 
     public function kelurahan()
     {
-        return $this->belongsTo(Kelurahan::class, 'id_kelurahan', 'id_kelurahan');
+        return $this->belongsTo(Kelurahan::class, 'id_kelurahan', 'id');
     }
 
     public function bencana()
     {
         return $this->hasMany(Bencana::class);
+    }
+
+    public function identitas()
+    {
+        return $this->hasMany(Identitas::class);
     }
 
 

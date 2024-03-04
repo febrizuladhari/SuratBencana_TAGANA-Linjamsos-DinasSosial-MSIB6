@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('deskripsi');
             $table->integer('jumlah');
             $table->unsignedBigInteger('id_bantuan')->nullable();
-            $table->foreign('id_bantuan')->references('id')->on('bantuans')->onUpdate('CASCADE');
+            $table->foreign('id_bantuan')->references('id')->on('bantuans')->onUpdate('CASCADE')->onDelete('CASCADE');
             $table->timestamps();
         });
     }

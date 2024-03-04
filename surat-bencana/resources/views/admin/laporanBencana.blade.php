@@ -18,7 +18,7 @@
                 <thead>
                     <tr>
                         <th>No.</th>
-                        <th>Jenis Bencana</th>
+                        <th>Bencana</th>
                         <th>Kelurahan</th>
                         <th>Kecamatan</th>
                     </tr>

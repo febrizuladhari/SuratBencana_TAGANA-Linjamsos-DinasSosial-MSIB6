@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('bantuans', function (Blueprint $table) {
             $table->id();
-            $table->enum('jns_bantuan', ['Paket Sandang', 'Buffer Stock', 'Permakanan', 'Bansos']);
+            $table->string('jns_bantuan');
             $table->unsignedBigInteger('id_bencana')->nullable();
-            $table->foreign('id_bencana')->references('id')->on('bencanas')->onUpdate('CASCADE');
+            $table->foreign('id_bencana')->references('id')->on('bencanas')->onUpdate('CASCADE')->onDelete('CASCADE');
             $table->timestamps();
         });
     }

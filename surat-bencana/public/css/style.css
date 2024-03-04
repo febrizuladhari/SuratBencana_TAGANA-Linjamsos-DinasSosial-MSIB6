@@ -5,6 +5,7 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 :root {
+  --hijauPemko: #0c4e23;
   --blue: #007bff;
   --indigo: #6610f2;
   --purple: #6f42c1;
@@ -3373,6 +3374,9 @@ input[type="button"].btn-block {
     pointer-events: none;
     cursor: default; }
 
+.navbar-nav .nav-item.active .nav-link {
+    color: #0c4e23;
+}
 .nav-tabs {
   border-bottom: 1px solid #dee2e6; }
   .nav-tabs .nav-item {
@@ -3403,7 +3407,7 @@ input[type="button"].btn-block {
 .nav-pills .nav-link.active,
 .nav-pills .show > .nav-link {
   color: #fff;
-  background-color: #007bff; }
+  background-color: #0c4e23; }
 
 .nav-fill .nav-item {
   -webkit-box-flex: 1;
@@ -3487,6 +3491,9 @@ input[type="button"].btn-block {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem; }
 
+  .collapse-item.active a {
+    color: #0c4e23 !important; /* Ganti warna teks untuk link aktif */
+}
 .navbar-collapse {
   -ms-flex-preferred-size: 100%;
   flex-basis: 100%;
@@ -5355,6 +5362,15 @@ a.bg-primary:hover, a.bg-primary:focus,
 button.bg-primary:hover,
 button.bg-primary:focus {
   background-color: #0062cc !important; }
+
+.bg-hijauPemko {
+background-color: #0c4e23 !important; }
+
+a.bg-hijauPemko:hover, a.bg-hijauPemko:focus,
+button.bg-hijauPemko:hover,
+button.bg-hijauPemko:focus {
+background-color: #0c4e23 !important; }
+
 
 .bg-secondary {
   background-color: #6c757d !important; }
@@ -8160,6 +8176,9 @@ h1, h2, h3, h4, h5,
 
 .bg-primary {
   background: #007bff !important; }
+
+.bg-hijauPemko {
+  background: #0c4e23 !important; }
 
 .ftco-section {
   padding: 7em 0; }

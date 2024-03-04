@@ -26,7 +26,7 @@
                         <th>Alamat</th>
                         <th>Kelurahan</th>
                         <th>Kecamatan</th>
-                        <th>Jenis Bencana</th>
+                        <th>Bencana</th>
                     </tr>
                         </thead>
                         <tbody>
@@ -42,7 +42,7 @@
                                 <td>{{ $data->nama_kelurahan }}</td>
                                 <td>{{ $data->nama_kecamatan }}</td>
                                 <td>{{ $data->jns_bencana }}</td>
-                            </tr>@endforeach   
+                            </tr>@endforeach
                         </tbody>
                     </table>
                 </div>

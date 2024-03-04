@@ -1,4 +1,8 @@
-<nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+<nav class="navbar navbar-expand navbar-ligh topbar mb-4 static-top shadow" style="background-color: #dec100;">
+
+    <div class="align-self-center">
+        <h4 class="font-weight-bold text-white">Sistem Informasi Manajemen Bencana</h4>
+    </div>
 
     <!-- Sidebar Toggle (Topbar) -->
     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
@@ -21,6 +25,9 @@
 
     <!-- Topbar Navbar -->
     <ul class="navbar-nav ml-auto">
+
+
+
 
         <!-- Nav Item - Search Dropdown (Visible Only XS) -->
         {{-- <li class="nav-item dropdown no-arrow d-sm-none">
@@ -46,8 +53,8 @@
             </div>
         </li> --}}
 
-        {{-- Tanggal Hari Ini
-        <script>
+        {{-- Tanggal Hari Ini --}}
+        {{-- <script>
             var today = new Date();
 
             // Mendapatkan tanggal, bulan, dan tahun dari objek Date
@@ -67,8 +74,8 @@
         <li class="nav-item dropdown no-arrow">
             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><strong>{{ Auth::user()->level }}</strong></span>
-                <img class="img-profile rounded-circle"
+                <span class="mr-2 d-none d-lg-inline text-white"><strong>{{ Auth::user()->level }}</strong></span>
+                <img class="img-profile rounded-circle mx-2"
                     src="{{ asset('img/profile.png') }}">
             </a>
             <!-- Dropdown - User Information -->

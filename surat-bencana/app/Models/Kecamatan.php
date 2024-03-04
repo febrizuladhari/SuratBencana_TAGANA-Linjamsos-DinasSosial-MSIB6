@@ -17,4 +17,11 @@ class Kecamatan extends Model
         'created_at',
         'updated_at'
     ];
+
+    public function kelurahan()
+    {
+        return $this->hasMany(Kelurahan::class);
+    }
+
+
 }

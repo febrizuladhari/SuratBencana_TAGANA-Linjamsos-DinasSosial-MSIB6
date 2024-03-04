@@ -3,53 +3,26 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use RealRashid\SweetAlert\Facades\Alert;
+use App\Models\Bencana;
+use App\Models\Keluarga;
 
-
-class AdminController extends Controller
+class KeluargaController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('admin.dashboard');
+        //
     }
-
-    public function beritaAcara()
-    {
-        return view('admin.beritaAcara');
-    }
-
-    public function dataKeluarga()
-    {
-        return view('admin.dataKeluarga');
-    }
-
-    public function bencana()
-    {
-        return view('admin.bencana');
-    }
-
-    public function kecamatan()
-    {
-        return view('admin.kecamatan');
-    }
-
-    public function kelurahan()
-    {
-        return view('admin.kelurahan');
-    }
-
-
-
 
     /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
-        //
+        $keluargas = Keluarga::pluck('no_kk', 'id');
+        return view('bencana.create', compact('keluargas'));
     }
 
     /**
