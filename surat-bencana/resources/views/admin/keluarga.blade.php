@@ -9,10 +9,21 @@
 <!-- Content -->
 @section('content')
 
-    <!-- DataTales Example -->
+    <!-- Keluarga -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Data Keluarga</h6>
+            <div class="row">
+                <div class="col-6 d-flex align-items-center">
+                    <h6 class="m-0 font-weight-bold text-primary">Data Keluarga</h6>
+                </div>
+                <div class="col-6 d-flex justify-content-end">
+                    <a href="{{ route('tambahKeluarga') }}" class="text-decoration-none">
+                        <button type="button" class="btn btn-info mx-1" data-toggle="modal" data-target="#createDetailBantuanModal">
+                            <i class="fas fa-plus fa-sm fa-fw mr-2"></i>Tambah
+                        </button>
+                    </a>
+                </div>
+            </div>
         </div>
         <div class="card-body">
             <div class="table-responsive">

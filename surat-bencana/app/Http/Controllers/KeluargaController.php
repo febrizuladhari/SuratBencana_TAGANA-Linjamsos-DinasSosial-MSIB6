@@ -3,8 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Kecamatan;
+use App\Models\Kelurahan;
+use App\Models\Bantuan;
+use App\Models\DetailBantuan;
+use App\Models\Bencana;
 use App\Models\Keluarga;
 use App\Models\Identitas;
+use RealRashid\SweetAlert\Facades\Alert;
+use Illuminate\Support\Facades\DB;
 
 class KeluargaController extends Controller
 {
@@ -39,5 +46,54 @@ class KeluargaController extends Controller
 
             return redirect()->route('keluarga')->with('success', 'Data keluarga berhasil diperbarui.');
         }
-    }
-    
+
+        public function create()
+        {
+            $kecamatan = Kecamatan::all();
+
+            return view('admin.tambahKeluarga', ['kecamatan' => $kecamatan]);
+        }
+
+        public function getKelurahan(Request $request)
+        {
+            $kelurahan = Kelurahan::where("id_kecamatan", $request->kecamatanID)->pluck('nama_kelurahan', 'id');
+
+            return response()->json($kelurahan);
+        }
+
+        public function store(Request $request)
+        {
+            $request->validate([
+                'id_kelurahan' => 'required',
+                'no_kk' => 'required',
+                'alamat' => 'required',
+            ]);
+
+            $tambahKeluarga = Keluarga::create([
+                'id_kelurahan' => $request->id_kelurahan,
+                'no_kk' => $request->no_kk,
+                'alamat' => $request->alamat,
+            ]);
+
+            // dd($tambahKeluarga);
+            $tambahKeluarga->save();
+
+
+            if($tambahKeluarga) {
+                toast('Keluarga Berhasil Dibuat','success');
+                return redirect()->route('keluarga')->with('success', 'Data keluarga berhasil dibuat.');
+            } else {
+                toast('Keluarga Gagal Dibuat','error');
+                return redirect()->route('keluarga')->with('success', 'Data keluarga gagal dibuat.');
+            }
+        }
+
+
+
+}
+
+
+
+
+
+

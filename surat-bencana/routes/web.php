@@ -96,11 +96,20 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('/keluarga', [KeluargaController::class, 'index'])->name('keluarga');
         Route::get('/keluarga/{id}/edit', [KeluargaController::class, 'edit'])->name('keluarga-edit');
         Route::put('/keluarga/{id}', [KeluargaController::class, 'update'])->name('keluarga-update');
+        Route::get('/tambahKeluarga', [KeluargaController::class, 'create'])->name('tambahKeluarga');
+        Route::post('/tambahKeluarga/store', [KeluargaController::class, 'store'])->name('tambahKeluarga-store');
+        Route::get('/getKelurahan', [KeluargaController::class, 'getKelurahan']);
 
         //editIdentitas
         Route::get('/identitas', [IdentitasController::class, 'index'])->name('identitas');
         Route::get('/identitas/{id}/edit', [IdentitasController::class, 'edit'])->name('identitas-edit');
         Route::put('/identitas/{id}', [IdentitasController::class, 'update'])->name('identitas-update');
+        Route::get('/tambahIdentitas', [IdentitasController::class, 'create'])->name('tambahIdentitas');
+        Route::post('/identitas/store', [IdentitasController::class, 'store'])->name('identitas-store');
+        Route::get('/getKelurahan', [IdentitasController::class, 'getKelurahan']);
+        Route::get('/getKeluarga', [IdentitasController::class, 'getKeluarga']);
+        Route::get('getKehamilan/{selectedStatus}', [IdentitasController::class, 'getKehamilan']);
+
 
 
         //Data Laporan

@@ -9,10 +9,21 @@
 <!-- Content -->
 @section('content')
 
-    <!-- DataTales Example -->
+    <!-- Identitas -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Data Identitas</h6>
+            <div class="row">
+                <div class="col-6 d-flex align-items-center">
+                    <h6 class="m-0 font-weight-bold text-primary">Data Identitas</h6>
+                </div>
+                <div class="col-6 d-flex justify-content-end">
+                    <a href="{{ route('tambahIdentitas') }}" class="text-decoration-none">
+                        <button type="button" class="btn btn-info mx-1" data-toggle="modal" data-target="#createDetailBantuanModal">
+                            <i class="fas fa-plus fa-sm fa-fw mr-2"></i>Tambah
+                        </button>
+                    </a>
+                </div>
+            </div>
         </div>
         <div class="card-body">
             <div class="table-responsive">
@@ -67,20 +78,42 @@
                                             <input type="text" class="form-control" id="nama" name="nama" value="{{ $identitas->nama }}">
                                         </div>
                                         <div class="form-group">
-                                            <label for="nik">Nik</label>
+                                            <label for="nik">NIK</label>
                                             <input type="text" class="form-control" id="nik" name="nik" value="{{ $identitas->nik }}">
-                                        </div> 
-                                        <div class="form-group">
+                                        </div>
+                                        {{-- <div class="form-group">
                                             <label for="status">Status</label>
                                             <input type="text" class="form-control" id="status" name="status" value="{{ $identitas->status }}">
+                                        </div> --}}
+                                        <div class="form-group">
+                                            <label for="status">Status</label>
+                                            <select id="status" name="status" class="form-control" required>
+                                                <option value="{{ $identitas->status }}">{{ $identitas->status }}</option>
+                                                <option value="Kepala Keluarga">Kepala Keluarga</option>
+                                                <option value="Istri">Istri</option>
+                                                <option value="Anak">Anak</option>
+                                                <option value="Anggota Lain">Anggota Lain</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="kehamilan">Kehamilan</label>
+                                            <select id="kehamilan" name="kehamilan" class="form-control" required>
+                                                <option value="{{ $identitas->kehamilan }}">{{ $identitas->kehamilan }}</option>
+                                                <option value="Hamil">Hamil</option>
+                                                <option value="Tidak Hamil">Tidak Hamil</option>
+                                            </select>
                                         </div>
                                         <div class="form-group">
                                             <label for="usia">Usia</label>
-                                            <input type="text" class="form-control" id="usia" name="usia" value="{{ $identitas->usia }}">
+                                            <input type="number" class="form-control" id="usia" name="usia" value="{{ $identitas->usia }}">
                                         </div>
                                         <div class="form-group">
                                             <label for="jns_kelamin">Jenis Kelamin</label>
-                                            <input type="text" class="form-control" id="jns_kelamin" name="jns_kelamin" value="{{ $identitas->jns_kelamin }}">
+                                            <select id="jns_kelamin" name="jns_kelamin" class="form-control" required>
+                                                <option value="{{ $identitas->jns_kelamin }}">{{ $identitas->jns_kelamin }}</option>
+                                                <option value="Laki-Laki">Laki-Laki</option>
+                                                <option value="Perempuan">Perempuan</option>
+                                            </select>
                                         </div>
 
                                         <div class="modal-footer">
