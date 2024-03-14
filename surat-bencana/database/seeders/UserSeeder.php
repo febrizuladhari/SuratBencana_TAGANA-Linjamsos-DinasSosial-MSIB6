@@ -24,12 +24,12 @@ class UserSeeder extends Seeder
             ],
 
             [
-                'name' => 'User',
-                'username' => 'user',
-                'email' => 'user@gmail.com',
-                'level' => 'user',
-                'password' => Hash::make('user123'),
-                ],
+            'name' => 'User',
+            'username' => 'user',
+            'email' => 'user@gmail.com',
+            'level' => 'user',
+            'password' => Hash::make('user123'),
+            ],
 
         ];
 

@@ -24,7 +24,7 @@ class IdentitasSeeder extends Seeder
 
         $faker = Faker::create('id_ID');
 
-        for ($i = 0; $i <= 98; $i++) {
+        for ($i = 0; $i <= 380; $i++) {
 
             DB::table('identitas')->insert([
                 'nik' => $faker->unique()->numerify('################'),

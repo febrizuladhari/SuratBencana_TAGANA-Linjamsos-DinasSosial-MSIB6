@@ -16,6 +16,10 @@ use App\Models\Identitas;
 use App\Models\User;
 use RealRashid\SweetAlert\Facades\Alert;
 
+use App\Events\ModelCreated;
+use App\Events\ModelDeleted;
+use App\Events\ModelUpdated;
+
 class ProfileController extends Controller
 {
     public function showGantiPassword()

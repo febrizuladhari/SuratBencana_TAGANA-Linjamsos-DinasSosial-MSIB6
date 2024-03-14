@@ -5,7 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Kelurahan;
 use App\Models\Kecamatan;
+use App\Models\User;
 use RealRashid\SweetAlert\Facades\Alert;
+
+use App\Events\ModelCreated;
+use App\Events\ModelDeleted;
+use App\Events\ModelUpdated;
 
 class KelurahanController extends Controller
 {

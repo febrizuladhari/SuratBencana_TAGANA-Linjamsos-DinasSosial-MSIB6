@@ -4,6 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Kecamatan;
+use App\Models\User;
+
+use App\Events\ModelCreated;
+use App\Events\ModelDeleted;
+use App\Events\ModelUpdated;
 
 class KecamatanController extends Controller
 {

@@ -10,7 +10,12 @@ use App\Models\DetailBantuan;
 use App\Models\Bencana;
 use App\Models\Keluarga;
 use App\Models\Identitas;
+use App\Models\User;
 use RealRashid\SweetAlert\Facades\Alert;
+
+use App\Events\ModelCreated;
+use App\Events\ModelDeleted;
+use App\Events\ModelUpdated;
 
 class IdentitasController extends Controller
 {
@@ -47,6 +52,7 @@ class IdentitasController extends Controller
         $identitas->kehamilan = $request->kehamilan;
         $identitas->usia = $request->usia;
         $identitas->jns_kelamin = $request->jns_kelamin;
+
 
         $identitas->save();
 
@@ -116,6 +122,8 @@ class IdentitasController extends Controller
         ]);
 
         // dd($tambahIdentitas);
+        event(new ModelCreated($tambahIdentitas, auth()->user()));
+
         $tambahIdentitas->save();
 
 
@@ -125,6 +133,22 @@ class IdentitasController extends Controller
         } else {
             toast('Identitas Gagal Dibuat','error');
             return redirect()->route('identitas')->with('success', 'Data identitas gagal dibuat.');
+        }
+    }
+
+    public function destroy($id)
+    {
+        $identitas = Identitas::findOrFail($id);
+        event(new ModelDeleted($identitas, auth()->user()));
+
+        $identitas->delete();
+
+        if($identitas) {
+            toast('Identitas Berhasil Dihapus','success');
+            return redirect()->route('identitas')->with('success', 'Data identitas berhasil dihapus.');
+        } else {
+            toast('Identitas Gagal Dihapus','error');
+            return redirect()->route('identitas')->with('success', 'Data identitas gagal dihapus.');
         }
     }
 

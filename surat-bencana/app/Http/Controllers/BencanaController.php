@@ -11,6 +11,11 @@ use App\Models\DetailBantuan;
 use App\Models\Bencana;
 use App\Models\Keluarga;
 use App\Models\Identitas;
+use App\Models\User;
+
+use App\Events\ModelCreated;
+use App\Events\ModelDeleted;
+use App\Events\ModelUpdated;
 
 class BencanaController extends Controller
 {
@@ -57,6 +62,8 @@ class BencanaController extends Controller
         public function destroy($id)
         {
             $bencana = Bencana::findOrFail($id);
+            event(new ModelDeleted($bencana, auth()->user()));
+
             $bencana->delete();
 
             if($bencana) {
@@ -111,6 +118,8 @@ class BencanaController extends Controller
                 'jns_bencana' => $request->jns_bencana,
                 'tanggal_bencana' => $request->tanggal_bencana,
             ]);
+
+            event(new ModelCreated($bencana, auth()->user()));
 
             $bencana->save();
             // dd($bencana);

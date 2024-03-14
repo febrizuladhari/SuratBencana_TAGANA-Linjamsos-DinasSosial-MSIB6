@@ -23,11 +23,11 @@ class BantuanSeeder extends Seeder
         $bantuan = ['Paket Sandang', 'Buffer Stock', 'Permakanan', 'Bansos'];
         $faker = Faker::create('id_ID');
 
-        for ($i = 0; $i <= 70; $i++) {
+        for ($i = 0; $i <= 150; $i++) {
 
             DB::table('bantuans')->insert([
                 'jns_bantuan' => $faker->randomElement($bantuan),
-                'id_bencana' => $faker->numberBetween(1, 30),
+                'id_bencana' => $faker->numberBetween(1, 80),
                 'created_at' => now(),
                 'updated_at' => now(),
             ]);

@@ -17,12 +17,12 @@ class DetailBantuanSeeder extends Seeder
     {
         $faker = Faker::create('id_ID');
 
-        for ($i = 0; $i <= 150; $i++) {
+        for ($i = 0; $i <= 350; $i++) {
 
             DB::table('detail_bantuans')->insert([
                 'deskripsi' => $faker->sentence(3),
                 'jumlah' => $faker->numberBetween(1, 10),
-                'id_bantuan' => $faker->numberBetween(1, 70),
+                'id_bantuan' => $faker->numberBetween(1, 150),
                 'created_at' => now(),
                 'updated_at' => now(),
             ]);

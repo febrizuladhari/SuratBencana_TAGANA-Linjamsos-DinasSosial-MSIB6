@@ -6,6 +6,17 @@ use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Event;
+use App\Events\Login;
+use App\Events\Logout;
+use App\Events\ModelCreated;
+use App\Events\ModelDeleted;
+use App\Events\ModelUpdated;
+use App\Listeners\LogLogin;
+use App\Listeners\LogLogout;
+use App\Listeners\LogModelCreated;
+use App\Listeners\LogModelUpdated;
+use App\Listeners\LogModelDeleted;
+
 
 class EventServiceProvider extends ServiceProvider
 {
@@ -15,8 +26,23 @@ class EventServiceProvider extends ServiceProvider
      * @var array<class-string, array<int, class-string>>
      */
     protected $listen = [
+        Login::class => [
+            LogLogin::class,
+        ],
+        Logout::class => [
+            LogLogout::class,
+        ],
         Registered::class => [
             SendEmailVerificationNotification::class,
+        ],
+        ModelCreated::class => [
+            LogModelCreated::class,
+        ],
+        ModelDeleted::class => [
+            LogModelDeleted::class,
+        ],
+        ModelUpdated::class => [
+            LogModelUpdated::class,
         ],
     ];
 

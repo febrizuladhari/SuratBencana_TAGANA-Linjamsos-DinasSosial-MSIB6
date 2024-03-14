@@ -28,7 +28,7 @@
         <div class="card-body">
             <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                    <thead>
+                    <thead class="thead-light">
                         <tr>
                             <th>No.</th>
                             <th>Nama</th>
@@ -52,6 +52,9 @@
                             <td>
                                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editBencanaModal_{{ $identitas->id }}">
                                     <i class="fas fa-edit fa-sm fa-fw mr-2"></i>Edit
+                                </button>
+                                <button type="button" class="btn btn-danger mx-1" data-toggle="modal" data-target="#deleteIdentitasModal_{{ $identitas->id }}">
+                                    <i class="fas fa-trash fa-sm fa-fw mr-2"></i>Hapus
                                 </button>
                             </td>
                         </tr>
@@ -119,6 +122,58 @@
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
                                             <button type="submit" class="btn btn-success">Simpan Perubahan</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+
+                        <!-- Modal Delete -->
+                        <div class="modal fade" id="deleteIdentitasModal_{{ $identitas->id }}" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                            <div class="modal-content p-3">
+                                <div class="modal-header">
+                                <h5 class="modal-title" id="staticBackdropLabel">Hapus Data Bencana</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                </div>
+                                <div class="modal-body">
+
+                                    <!-- Form untuk hapus identitas -->
+                                    <form id="deleteIdentitasForm" method="POST" action="{{ route('identitas-destroy', $identitas->id) }}">
+                                        @csrf
+                                        @method('DELETE')
+                                        <!-- Input fields untuk mengedit identitas -->
+                                        <div class="form-group">
+                                            <label for="no_kk">Nomor KK</label>
+                                            <input type="text" class="form-control" id="no_kk" name="no_kk" value="{{ $identitas->no_kk }}" disabled>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="nik">NIK</label>
+                                            <input type="text" class="form-control" id="nik" name="nik" value="{{ $identitas->nik }}" disabled>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="nama">Nama</label>
+                                            <input type="text" class="form-control" id="nama" name="nama" value="{{ $identitas->nama }}" disabled>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="status">Status</label>
+                                            <input type="text" class="form-control" id="status" name="status" value="{{ $identitas->status }}" disabled>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="usia">Usia</label>
+                                            <input type="number" class="form-control" id="usia" name="usia" value="{{ $identitas->usia }}" disabled>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="jns_kelamin">Jenis Kelamin</label>
+                                            <input type="text" class="form-control" id="jns_kelamin" name="jns_kelamin" value="{{ $identitas->jns_kelamin }}" disabled>
+                                        </div>
+
+                                        <div class="modal-footer mt-4">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                                            <button type="submit" class="btn btn-danger">Hapus</button>
                                         </div>
                                     </form>
                                 </div>

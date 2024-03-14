@@ -12,6 +12,13 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
 use App\Models\User;
 
+use App\Events\Login;
+use App\Events\Logout;
+use App\Events\ModelCreated;
+use App\Events\ModelDeleted;
+use App\Events\ModelUpdated;
+
+
 
 class AuthController extends Controller
 {
@@ -47,11 +54,13 @@ class AuthController extends Controller
             $user =  Auth::user();
             if($user->level =='admin'){
                 Alert::success('Hi !', 'Selamat Datang');
+                event(new Login($user));
                 return redirect()->route('home')->with(['success' => 'Selamat Datang']);
             }
-                else if($user->level =='user'){
-                    Alert::success('Hi !', 'Selamat Datang');
-                    return redirect()->route('home')->with(['success' => 'Selamat Datang']);
+            else if($user->level =='user'){
+                Alert::success('Hi !', 'Selamat Datang');
+                event(new Login($user));
+                return redirect()->route('home')->with(['success' => 'Selamat Datang']);
             }
             Alert::error('Ups!', 'Maaf, Akun atau Password Anda Salah.');
             return redirect()->route('login');
@@ -64,7 +73,6 @@ class AuthController extends Controller
 
 
     public function register(){
-        // tampilkan view register
         return view('auth.register');
     }
 
@@ -92,14 +100,17 @@ class AuthController extends Controller
 
     public function logout(Request $request){
 
-        $request->session()->flush();
+
+        $user = Auth::user();
+        event(new Logout($user));
+        $request->session()->forget('user');
 
         Auth::logout();
 
         Alert::warning('Bye !', 'Selamat Tinggal');
         return redirect()->route('login')->with(['success' => 'Selamat Tinggal']);
-        // return Redirect('/');
     }
+
 
 
 

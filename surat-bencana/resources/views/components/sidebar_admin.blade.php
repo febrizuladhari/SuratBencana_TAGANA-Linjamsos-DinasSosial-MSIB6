@@ -25,7 +25,7 @@
     </div>
 
     <!-- Nav Item - Pages Collapse Menu -->
-    <li class="nav-item {{ Request::is('berita-acara', 'data-keluarga') ? 'active' : '' }}">
+    <li class="nav-item {{ Request::is('berita-acara', 'data-keluarga', 'bansos/filter') ? 'active' : '' }}">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
             aria-expanded="true" aria-controls="collapseTwo">
             <i class="fas fa-fw fa-file-invoice"></i>
@@ -36,28 +36,29 @@
                 <h6 class="collapse-header">Surat:</h6>
                 <a style="color: #0c4e23;" class="collapse-item {{ Request::is('berita-acara') ? 'active' : '' }}" href="{{ route('berita-acara') }}">Berita Acara Serah Terima</a>
                 <a style="color: #0c4e23;" class="collapse-item {{ Request::is('data-keluarga') ? 'active' : '' }}" href="{{ route('data-keluarga') }}">Data Keluarga</a>
+                <a style="color: #0c4e23;" class="collapse-item {{ Request::is('bansos/filter') ? 'active' : '' }}" href="{{ route('bansos-filter-form') }}">Data Bansos</a>
             </div>
         </div>
     </li>
 
-    <!-- Nav Item - Utilities Collapse Menu -->
+    <!-- Nav Item - Data -->
     <li class="nav-item {{ Request::is('identitas', 'keluarga', 'bencana', 'kecamatan', 'kelurahan', 'bantuan', 'detailBantuan') ? 'active' : '' }}">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
             aria-expanded="true" aria-controls="collapseUtilities">
             <i class="fas fa-fw fa-edit"></i>
-            <span>Edit Data</span>
+            <span>Manajemen Data</span>
         </a>
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
             data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Edit Data:</h6>
+                <h6 class="collapse-header">Manajemen Data:</h6>
                 <a style="color: #0c4e23;" class="collapse-item {{ Request::is('identitas') ? 'active' : '' }}" href="{{ route('identitas') }}">Identitas</a>
                 <a style="color: #0c4e23;" class="collapse-item {{ Request::is('keluarga') ? 'active' : '' }}" href="{{ route('keluarga') }}">Keluarga</a>
                 <a style="color: #0c4e23;" class="collapse-item {{ Request::is('bencana') ? 'active' : '' }}" href="{{ route('bencana') }}">Bencana</a>
-                <a style="color: #0c4e23;" class="collapse-item {{ Request::is('kelurahan') ? 'active' : '' }}" href="{{ route('kelurahan') }}">Kelurahan</a>
-                <a style="color: #0c4e23;" class="collapse-item {{ Request::is('kecamatan') ? 'active' : '' }}" href="{{ route('kecamatan') }}">Kecamatan</a>
                 <a style="color: #0c4e23;" class="collapse-item {{ Request::is('bantuan') ? 'active' : '' }}" href="{{ route('bantuan') }}">Bantuan</a>
                 <a style="color: #0c4e23;" class="collapse-item {{ Request::is('detailBantuan') ? 'active' : '' }}" href="{{ route('detailBantuan') }}">Detail Bantuan</a>
+                <a style="color: #0c4e23;" class="collapse-item {{ Request::is('kelurahan') ? 'active' : '' }}" href="{{ route('kelurahan') }}">Kelurahan</a>
+                <a style="color: #0c4e23;" class="collapse-item {{ Request::is('kecamatan') ? 'active' : '' }}" href="{{ route('kecamatan') }}">Kecamatan</a>
             </div>
         </div>
     </li>
@@ -104,25 +105,31 @@
     </div>
 
     <!-- Nav Item -->
-    <li class="nav-item {{ Request::is('logtambahsurat') ? 'active' : '' }}">
-        <a class="nav-link" href="{{ route('logtambahsurat') }}">
+    <li class="nav-item {{ Request::is('logLoginLogout') ? 'active' : '' }}">
+        <a class="nav-link" href="{{ route('logLoginLogout') }}">
             <i class="fas fa-fw fa-history"></i>
-            <span>Log Tambah Surat</span></a>
+            <span>Log Authentication</span></a>
     </li>
 
-    <!-- Nav Item -->
-    <li class="nav-item {{ Request::is('logtambahbencana') ? 'active' : '' }}">
-        <a class="nav-link" href="{{ route('logtambahbencana') }}">
+
+    <!-- Nav Item - Log -->
+    <li class="nav-item {{ Request::is('logidentitas', 'logkeluarga', 'logbencana', 'logbantuan', 'logdetailbantuan', 'logkelurahan', 'logkecamatan') ? 'active' : '' }}">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLog"
+            aria-expanded="true" aria-controls="collapseLog">
             <i class="fas fa-fw fa-history"></i>
-            <span>Log Tambah Bencana</span></a>
+            <span>Log Data</span>
+        </a>
+        <div id="collapseLog" class="collapse" aria-labelledby="headingUtilities"
+            data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Log Data:</h6>
+                <a style="color: #0c4e23;" class="collapse-item {{ Request::is('logcreate') ? 'active' : '' }}" href="{{ route('logcreate') }}">Log Create</a>
+                <a style="color: #0c4e23;" class="collapse-item {{ Request::is('logupdate') ? 'active' : '' }}" href="{{ route('logupdate') }}">Log Update</a>
+                <a style="color: #0c4e23;" class="collapse-item {{ Request::is('logdelete') ? 'active' : '' }}" href="{{ route('logdelete') }}">Log Delete</a>
+            </div>
+        </div>
     </li>
 
-    <!-- Nav Item -->
-    <li class="nav-item {{ Request::is('loghapusdata') ? 'active' : '' }}">
-        <a class="nav-link" href="{{ route('loghapusdata') }}">
-            <i class="fas fa-fw fa-history"></i>
-            <span>Log Hapus Data</span></a>
-    </li>
 
 
 

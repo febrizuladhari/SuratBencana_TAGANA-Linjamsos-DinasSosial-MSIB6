@@ -10,7 +10,12 @@ use App\Models\DetailBantuan;
 use App\Models\Bencana;
 use App\Models\Keluarga;
 use App\Models\Identitas;
+use App\Models\User;
 use RealRashid\SweetAlert\Facades\Alert;
+
+use App\Events\ModelCreated;
+use App\Events\ModelDeleted;
+use App\Events\ModelUpdated;
 
 class BantuanController extends Controller
 {
@@ -96,6 +101,8 @@ class BantuanController extends Controller
 
         $bantuan->save();
 
+        event(new ModelCreated($bantuan, auth()->user()));
+
         // dd($bantuan);
 
         if($bantuan) {
@@ -130,6 +137,7 @@ class BantuanController extends Controller
      */
     public function update(Request $request, $id)
     {
+
         $bantuan = Bantuan::findOrFail($id);
 
         $request->validate([
@@ -137,6 +145,7 @@ class BantuanController extends Controller
         ]);
 
         $bantuan->jns_bantuan = $request->jns_bantuan;
+
 
         $bantuan->save();
         // dd($bantuan);
@@ -157,6 +166,9 @@ class BantuanController extends Controller
     {
 
         $bantuan = Bantuan::findOrFail($id);
+
+        event(new ModelDeleted($bantuan, auth()->user()));
+
         $bantuan->delete();
 
         if($bantuan) {

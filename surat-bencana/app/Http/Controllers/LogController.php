@@ -4,6 +4,23 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
+use Illuminate\Support\Facades\DB;
+use App\Models\Kecamatan;
+use App\Models\Kelurahan;
+use App\Models\Bantuan;
+use App\Models\DetailBantuan;
+use App\Models\Bencana;
+use App\Models\Keluarga;
+use App\Models\Identitas;
+use App\Models\User;
+use App\Models\UserLog;
+use App\Models\LogCreate;
+use App\Models\LogUpdate;
+use App\Models\LogDelete;
+
+use App\Events\ModelCreated;
+use App\Events\ModelDeleted;
+use App\Events\ModelUpdated;
 
 class LogController extends Controller
 {
@@ -11,20 +28,35 @@ class LogController extends Controller
      * Display a listing of the resource.
      */
 
-    public function logtambahsurat()
+    public function logLoginLogout()
     {
-        return view('log.logtambahsurat');
+        $logLoginLogouts = UserLog::all();
+
+        return view('log.logLoginLogout', compact('logLoginLogouts'));
     }
 
-    public function logtambahbencana()
+    public function logCreate()
     {
-        return view('log.logtambahbencana');
+        $logCreates = LogCreate::all();
+
+        return view('log.logCreate', compact('logCreates'));
     }
 
-    public function loghapusdata()
+    public function logUpdate()
     {
-        return view('log.loghapusdata');
+        $logUpdates = LogUpdate::all();
+
+        return view('log.logUpdate', compact('logUpdates'));
     }
+
+    public function logDelete()
+    {
+        $logDeletes = LogDelete::all();
+
+        return view('log.logDelete', compact('logDeletes'));
+    }
+
+
 
     public function index()
     {

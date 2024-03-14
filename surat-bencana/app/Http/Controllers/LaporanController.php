@@ -10,6 +10,10 @@ use App\Models\Identitas;
 use App\Models\Bencana;
 use RealRashid\SweetAlert\Facades\Alert;
 
+use App\Events\ModelCreated;
+use App\Events\ModelDeleted;
+use App\Events\ModelUpdated;
+
 class LaporanController extends Controller
 {
     /**

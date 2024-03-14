@@ -4,10 +4,22 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Events\ModelUpdated;
 
 class Bencana extends Model
 {
     use HasFactory;
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::updating(function ($model) {
+            $oldData = $model->getRawOriginal();
+            $user = auth()->user();
+            event(new ModelUpdated($model, $oldData, $user));
+        });
+    }
 
     public $table = "bencanas";
     public $timestamps = true;
@@ -25,12 +37,12 @@ class Bencana extends Model
 
     public function bantuan()
     {
-        return $this->hasMany(Bantuan::class);
+        return $this->hasMany(Bantuan::class, 'id_bencana', 'id');
     }
 
     public function keluarga()
     {
-        return $this->belongsTo(Keluarga::class, 'id_keluarga');
+        return $this->belongsTo(Keluarga::class, 'id_keluarga', 'id');
     }
 
 }

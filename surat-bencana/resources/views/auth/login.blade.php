@@ -37,7 +37,7 @@
                             <div class="login-wrap align-self-center p-4 p-md-5">
                                 <div class="d-flex">
                                     <div class="w-100">
-                                        <h3 class="mb-4">Sign In</h3>
+                                        <h3 class="mb-4">Masuk</h3>
                                     </div>
                                 </div>
 
@@ -58,12 +58,18 @@
                                         <label class="label" for="username">Username</label>
                                         <input id="username" name="username" type="text" class="form-control" placeholder="Username" required>
                                     </div>
+                                    @error('username')
+                                        <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror
 
                                     <div class="form-group mb-5">
                                         <label class="label" for="password">Password</label>
                                         <input id="password" name="password" type="password" class="form-control" placeholder="Password" required>
-                                        <input type="checkbox" onclick="togglePassword()"> Tampilkan Password
+                                        <input type="checkbox" onclick="togglePassword()" class="mr-1"> Tampilkan Password
                                     </div>
+                                    @error('password')
+                                        <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror
                                     <script>
                                         function togglePassword() {
                                             var passwordField = document.getElementById("password");
@@ -73,10 +79,10 @@
                                                 passwordField.type = "password";
                                             }
                                         }
-                                        </script>
+                                    </script>
 
                                     <div class="form-group">
-                                        <button type="submit" class="form-control btn btn-primary rounded px-3"><strong>Sign In</strong></button>
+                                        <button type="submit" class="form-control btn btn-primary rounded px-3"><strong>Masuk</strong></button>
                                     </div>
 
                                 </form>

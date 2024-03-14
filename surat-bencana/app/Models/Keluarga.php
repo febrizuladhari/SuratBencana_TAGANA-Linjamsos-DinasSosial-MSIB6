@@ -4,10 +4,23 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Events\ModelUpdated;
 
 class Keluarga extends Model
 {
     use HasFactory;
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::updating(function ($model) {
+            $oldData = $model->getRawOriginal();
+            $user = auth()->user();
+            event(new ModelUpdated($model, $oldData, $user));
+        });
+    }
+
 
     protected $table = 'keluargas';
 
@@ -28,12 +41,12 @@ class Keluarga extends Model
 
     public function bencana()
     {
-        return $this->hasMany(Bencana::class);
+        return $this->hasMany(Bencana::class, 'id_keluarga', 'id');
     }
 
     public function identitas()
     {
-        return $this->hasMany(Identitas::class);
+        return $this->hasMany(Identitas::class, 'no_kk', 'no_kk');
     }
 
 

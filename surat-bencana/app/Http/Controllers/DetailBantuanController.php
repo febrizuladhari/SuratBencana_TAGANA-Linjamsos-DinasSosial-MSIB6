@@ -10,8 +10,13 @@ use App\Models\DetailBantuan;
 use App\Models\Bencana;
 use App\Models\Keluarga;
 use App\Models\Identitas;
+use App\Models\User;
 use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Facades\DB;
+
+use App\Events\ModelCreated;
+use App\Events\ModelDeleted;
+use App\Events\ModelUpdated;
 
 
 class DetailBantuanController extends Controller
@@ -82,6 +87,8 @@ class DetailBantuanController extends Controller
             'jumlah' => $request->jumlah,
         ]);
 
+        event(new ModelCreated($detailBantuan, auth()->user()));
+
         // dd($detailBantuan);
         $detailBantuan->save();
 
@@ -129,6 +136,7 @@ class DetailBantuanController extends Controller
         $detailBantuan->deskripsi = $request->deskripsi;
         $detailBantuan->jumlah = $request->jumlah;
 
+
         $detailBantuan->save();
         // dd($detailBantuan);
 
@@ -147,6 +155,9 @@ class DetailBantuanController extends Controller
     public function destroy(string $id)
     {
         $detailBantuan = DetailBantuan::findOrFail($id);
+
+        event(new ModelDeleted($detailBantuan, auth()->user()));
+
         $detailBantuan->delete();
 
         if($detailBantuan) {

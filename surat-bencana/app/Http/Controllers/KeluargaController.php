@@ -10,8 +10,13 @@ use App\Models\DetailBantuan;
 use App\Models\Bencana;
 use App\Models\Keluarga;
 use App\Models\Identitas;
+use App\Models\User;
 use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Facades\DB;
+
+use App\Events\ModelCreated;
+use App\Events\ModelDeleted;
+use App\Events\ModelUpdated;
 
 class KeluargaController extends Controller
 {
@@ -41,6 +46,7 @@ class KeluargaController extends Controller
 
             $keluarga->no_kk = $request->no_kk;
             $keluarga->alamat = $request->alamat;
+
 
             $keluarga->save();
 
@@ -74,6 +80,9 @@ class KeluargaController extends Controller
                 'no_kk' => $request->no_kk,
                 'alamat' => $request->alamat,
             ]);
+
+
+            event(new ModelCreated($tambahKeluarga, auth()->user()));
 
             // dd($tambahKeluarga);
             $tambahKeluarga->save();
