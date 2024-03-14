@@ -26,7 +26,7 @@ class KeluargaSeeder extends Seeder
                 // 'no_kk' => $faker->unique()->numerify('#'), //Aselii Cuy
                 'no_kk' => ($i+1),
                 'alamat' => $faker->streetAddress(),
-                'id_kelurahan' => $faker->numberBetween(1, 140),
+                'id_kelurahan' => $faker->numberBetween(1, 120),
                 'created_at' => now(),
                 'updated_at' => now(),
             ]);

@@ -35,12 +35,7 @@
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Surat:</h6>
                 <a style="color: #0c4e23;" class="collapse-item {{ Request::is('berita-acara') ? 'active' : '' }}" href="{{ route('berita-acara') }}">Berita Acara Serah Terima</a>
-<<<<<<< Updated upstream
-                <a style="color: #0c4e23;" class="collapse-item {{ Request::is('data-keluarga') ? 'active' : '' }}" href="{{ route('data-keluarga') }}">Data Keluarga</a>
-                <a style="color: #0c4e23;" class="collapse-item {{ Request::is('bansos/filter') ? 'active' : '' }}" href="{{ route('bansos-filter-form') }}">Data Bansos</a>
-=======
                 <a style="color: #0c4e23;" class="collapse-item {{ Request::is('data-keluarga') ? 'active' : '' }}" href="{{ route('data-keluarga') }}">Data Keluarga Korban</a>
->>>>>>> Stashed changes
             </div>
         </div>
     </li>
