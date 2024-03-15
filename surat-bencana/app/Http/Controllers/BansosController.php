@@ -70,9 +70,7 @@ class BansosController extends Controller
 
         $keluargas = $query->get();
 
-
         return view('admin.dataBansos', compact('keluargas'));
-
 
     }
 

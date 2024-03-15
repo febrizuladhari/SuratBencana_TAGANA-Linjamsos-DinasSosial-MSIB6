@@ -20,6 +20,8 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ChartController;
 use App\Http\Controllers\ExcelController;
 use App\Http\Controllers\BansosController;
+use App\Http\Controllers\PermakananController;
+use App\Http\Controllers\BeritaAcaraController;
 
 
 /*
@@ -60,6 +62,11 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('/bansos-download', [BansosController::class, 'excelBansos'])->name('bansos-download');
 
         // Route::get('/bansos/{bansos}', [BansosController::class, 'showBansos'])->name('bansos-show');
+
+
+        // Permakanan
+        Route::get('/permakanan/filter', [PermakananController::class, 'showFilterPermakanan'])->name('permakanan-filter-form');
+        Route::get('/permakanan', [PermakananController::class, 'filterPermakanan'])->name('permakanan-filter');
 
 
         Route::get('/data-laporan', [LaporanController::class, 'datalaporan'])->name('data-laporan');
@@ -134,6 +141,8 @@ Route::group(['middleware' => ['auth']], function () {
 
         //Chart
         Route::get('/home', [ChartController::class, 'chartDashboard'])->name('home');
+        Route::get('/detailChart', [ChartController::class, 'detailChart'])->name('detailChart');
+        Route::get('/detailChart/data', [ChartController::class, 'getData'])->name('detailChart-data');
 
 
 
