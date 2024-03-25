@@ -59,8 +59,8 @@ class BansosExport implements FromCollection, WithHeadings, ShouldAutoSize, With
                 ($keluarga->identitas->first()->no_kk ?? ''),
                 '',
                 date('d-m-Y', strtotime($keluarga->bencana->first()->tanggal_bencana ?? '')),
-                ($keluarga->alamat)." ".($keluarga->kelurahan->nama_kelurahan ?? '')." ".($keluarga->kelurahan->kecamatan->nama_kecamatan ?? ''),
-                ($keluarga->alamat)." ".($keluarga->kelurahan->nama_kelurahan ?? '')." ".($keluarga->kelurahan->kecamatan->nama_kecamatan ?? ''),
+                $keluarga->bencana->first()->alamat_bencana ?? '',
+                ($keluarga->alamat)." Kelurahan ".($keluarga->kelurahan->nama_kelurahan ?? '')." ".($keluarga->kelurahan->kecamatan->nama_kecamatan ?? ''),
                 '',
             ];
         });

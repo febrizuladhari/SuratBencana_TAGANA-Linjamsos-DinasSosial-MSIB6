@@ -22,11 +22,15 @@ class KeluargaController extends Controller
 {
     public function index()
     {
-        $keluargas = Keluarga::join('identitas', 'keluargas.no_kk', '=', 'identitas.no_kk')
-        -> where('identitas.status', '=', 'Kepala Keluarga')
-        ->select('keluargas.id', 'keluargas.no_kk', 'identitas.id as identitas_id', 'keluargas.alamat', 'identitas.nama')
-        ->get();
-        return view('admin.keluarga', ['keluargas' => $keluargas]);
+        // $keluargas = Keluarga::join('identitas', 'keluargas.no_kk', '=', 'identitas.no_kk')
+        // -> where('identitas.status', '=', 'Kepala Keluarga')
+        // ->select('keluargas.id', 'keluargas.no_kk', 'identitas.id as identitas_id', 'keluargas.alamat', 'identitas.nama')
+        // ->get();
+
+        $keluargas = Keluarga::with('kelurahan.kecamatan', 'bencana.bantuan.detailbantuan')->get();
+
+        // dd($keluargas);
+        return view('admin.keluarga', compact('keluargas'));
     }
 
 
@@ -50,7 +54,14 @@ class KeluargaController extends Controller
 
             $keluarga->save();
 
-            return redirect()->route('keluarga')->with('success', 'Data keluarga berhasil diperbarui.');
+            if($keluarga) {
+                toast('Keluarga Berhasil Diupdate','success');
+                return redirect()->route('keluarga')->with('success', 'Data keluarga berhasil diupdate.');
+            } else {
+                toast('Keluarga Gagal Diupdate','error');
+                return redirect()->route('keluarga')->with('success', 'Data keluarga gagal diupdate.');
+            }
+
         }
 
         public function create()

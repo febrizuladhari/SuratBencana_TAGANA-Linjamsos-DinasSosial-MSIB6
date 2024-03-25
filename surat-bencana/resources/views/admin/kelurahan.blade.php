@@ -17,23 +17,26 @@
         </div>
         <div class="card-body">
             <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <table class="table table-bordered display nowrap" id="dataTable" width="100%" cellspacing="0">
                     <thead class="thead-light">
                         <tr>
+                            <th>No.</th>
+                            <th>Kelurahan</th>
                             <th>NIP</th>
                             <th>Nama</th>
-                            <th>Kelurahan</th>
                             <th>Kecamatan</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
 
                     <tbody>
+                        <?php $no = 1; ?>
                         @foreach ($kelurahans as $kelurahan)
                         <tr>
+                            <td>{{ $no++ }}</td>
+                            <td>{{ $kelurahan->nama_kelurahan }}</td>
                             <td>{{ $kelurahan->nip_lurah }}</td>
                             <td>{{ $kelurahan->nama_lurah }}</td>
-                            <td>{{ $kelurahan->nama_kelurahan }}</td>
                             <td>{{ $kelurahan->kecamatan ? $kelurahan->kecamatan->nama_kecamatan : 'Data Tidak Berelasi' }}</td>
                             <td>
                                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editKelurahanModal_{{ $kelurahan->id }}">

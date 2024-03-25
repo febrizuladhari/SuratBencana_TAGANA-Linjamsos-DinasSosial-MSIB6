@@ -96,6 +96,7 @@ class BansosController extends Controller
 
         $keluargas = $query->get();
 
+        // dd($keluargas);
         return Excel::download(new BansosExport($keluargas), 'Data Bantuan Sosial.xlsx');
     }
 

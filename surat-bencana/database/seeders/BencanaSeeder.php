@@ -29,7 +29,9 @@ class BencanaSeeder extends Seeder
             DB::table('bencanas')->insert([
                 'jns_bencana' => $faker->randomElement($bencana),
                 'id_keluarga' => $faker->numberBetween(1, 20),
+                'alamat_bencana' => $faker->streetAddress(),
                 'tanggal_bencana' => $faker->dateTimeBetween($startDate, $endDate)->format('Y-m-d'),
+                'waktu_bencana' => $faker->time(),
                 'created_at' => now(),
                 'updated_at' => now(),
             ]);

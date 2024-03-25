@@ -29,7 +29,9 @@ class Bencana extends Model
         'id',
         'jns_bencana',
         'id_keluarga',
+        'alamat_bencana',
         'tanggal_bencana',
+        'waktu_bencana',
         'created_at',
         'updated_at'
     ];

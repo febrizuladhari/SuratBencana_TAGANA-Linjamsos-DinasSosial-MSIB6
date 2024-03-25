@@ -26,7 +26,7 @@ class DetailBantuanController extends Controller
      */
     public function index()
     {
-        $detailBantuans = DetailBantuan::with('bantuan.bencana.keluarga')->get();
+        $detailBantuans = DetailBantuan::with('bantuan.bencana.keluarga.kelurahan.kecamatan')->get();
 
         return view('admin.detailBantuan', compact('detailBantuans'));
     }

@@ -27,7 +27,7 @@
         </div>
         <div class="card-body">
             <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <table class="table table-bordered display nowrap" id="dataTable" width="100%" cellspacing="0">
                     <thead class="thead-light">
                         <tr>
                             <th>No.</th>
@@ -36,19 +36,26 @@
                             <th>Status</th>
                             <th>Usia</th>
                             <th>Jenis Kelamin</th>
+                            <th>Alamat</th>
+                            <th>Kelurahan</th>
+                            <th>Kecamatan</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
 
                     <tbody>
-                        @foreach ($identitas as $key => $identitas)
+                        <?php $no = 1; ?>
+                        @foreach ($identitass as $identitas)
                         <tr>
-                            <td>{{ $key + 1 }}</td>
+                            <td>{{ $no++ }}</td>
                             <td>{{ $identitas->nama }}</td>
                             <td>{{ $identitas->nik }}</td>
                             <td>{{ $identitas->status }}</td>
                             <td>{{ $identitas->usia }}</td>
                             <td>{{ $identitas->jns_kelamin }}</td>
+                            <td>{{ $identitas->keluarga->alamat }}</td>
+                            <td>{{ $identitas->keluarga->kelurahan->nama_kelurahan }}</td>
+                            <td>{{ $identitas->keluarga->kelurahan->kecamatan->nama_kecamatan }}</td>
                             <td>
                                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editBencanaModal_{{ $identitas->id }}">
                                     <i class="fas fa-edit fa-sm fa-fw mr-2"></i>Edit

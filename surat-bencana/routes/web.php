@@ -22,6 +22,7 @@ use App\Http\Controllers\ExcelController;
 use App\Http\Controllers\BansosController;
 use App\Http\Controllers\PermakananController;
 use App\Http\Controllers\BeritaAcaraController;
+use App\Http\Controllers\DataKeluargaController;
 
 
 /*
@@ -53,8 +54,14 @@ Route::group(['middleware' => ['auth']], function () {
         // Admin Controller
         // Route::get('/home', [AdminController::class, 'index'])->name('home');
 
-        Route::get('/berita-acara', [AdminController::class, 'beritaAcara'])->name('berita-acara');
-        Route::get('/data-keluarga', [AdminController::class, 'dataKeluarga'])->name('data-keluarga');
+        // Route::get('/berita-acara', [AdminController::class, 'beritaAcara'])->name('berita-acara');
+        // Route::get('/data-keluarga', [AdminController::class, 'dataKeluarga'])->name('data-keluarga');
+
+        // Data Keluarga
+        Route::get('/dataKeluarga/filter', [DataKeluargaController::class, 'showFilterDataKeluarga'])->name('dataKeluarga-filter-form');
+        Route::get('/dataKeluarga', [DataKeluargaController::class, 'filterDataKeluarga'])->name('dataKeluarga-filter');
+        Route::get('/getBencanaByKelurahan', [DataKeluargaController::class, 'getBencanaByKelurahan'])->name('getBencanaByKelurahan');
+        // Route::get('/getKelurahan', [DataKeluargaController::class, 'getKelurahan']);
 
         // Bansos
         Route::get('/bansos/filter', [BansosController::class, 'showFilterBansos'])->name('bansos-filter-form');
@@ -67,6 +74,24 @@ Route::group(['middleware' => ['auth']], function () {
         // Permakanan
         Route::get('/permakanan/filter', [PermakananController::class, 'showFilterPermakanan'])->name('permakanan-filter-form');
         Route::get('/permakanan', [PermakananController::class, 'filterPermakanan'])->name('permakanan-filter');
+        // Route::get('/getKelurahan', [PermakananController::class, 'getKelurahan']);
+        // Route::get('/getKeluarga', [PermakananController::class, 'getKeluarga']);
+        // Route::get('/getBencana', [PermakananController::class, 'getBencana']);
+        Route::get('/getBencanaByKelurahan', [PermakananController::class, 'getBencanaByKelurahan'])->name('getBencanaByKelurahan');
+        // Route::get('/permakanan-detail/{id}', [PermakananController::class, 'detailDataPermakanan'])->name('permakanan-detail');
+        Route::get('/permakanan-download', [PermakananController::class, 'excelPermakanan'])->name('permakanan-download');
+        Route::get('/tes', [PermakananController::class, 'tes']);
+
+
+        // Berita Acara
+        Route::get('/beritaAcara/filter', [BeritaAcaraController::class, 'showFilterBeritaAcara'])->name('beritaAcara-filter-form');
+        Route::get('/beritaAcara', [BeritaAcaraController::class, 'filterBeritaAcara'])->name('beritaAcara-filter');
+        Route::get('/getKelurahan', [BeritaAcaraController::class, 'getKelurahan']);
+        Route::get('/beritaAcara-detail/{id}', [BeritaAcaraController::class, 'detailDataBeritaAcara'])->name('beritaAcara-detail');
+        Route::get('/beritaAcara-detail/{id}/pdf', [BeritaAcaraController::class, 'downloadBeritaAcaraPDF'])->name('beritaAcara-download');
+
+
+
 
 
         Route::get('/data-laporan', [LaporanController::class, 'datalaporan'])->name('data-laporan');

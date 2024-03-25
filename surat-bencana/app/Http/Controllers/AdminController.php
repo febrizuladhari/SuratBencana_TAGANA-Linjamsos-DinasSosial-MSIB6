@@ -26,10 +26,10 @@ class AdminController extends Controller
     //     return view('admin.dashboard');
     // }
 
-    public function beritaAcara()
-    {
-        return view('admin.beritaAcara');
-    }
+    // public function beritaAcara()
+    // {
+    //     return view('admin.beritaAcara');
+    // }
 
     public function dataKeluarga()
     {

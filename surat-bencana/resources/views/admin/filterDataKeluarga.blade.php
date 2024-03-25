@@ -2,21 +2,19 @@
 
 
 @section('title')
-    <title>Filter Permakanan</title>
+    <title>Filter Data Keluarga</title>
 @endsection
 
 
 <!-- Content -->
 @section('content')
 
-
-
-    <!-- Filtering Permakanan -->
+    <!-- Filtering Data Keluarga -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
             <div class="row">
                 <div class="col-6 d-flex align-items-center">
-                    <h6 class="m-0 font-weight-bold text-primary">Filter Bantuan Permakanan</h6>
+                    <h6 class="m-0 font-weight-bold text-primary">Filter Data Keluarga</h6>
                 </div>
             </div>
         </div>
@@ -24,7 +22,7 @@
         <div class="card-body">
 
             <!-- Form untuk edit bantuan -->
-            <form method="GET" action="{{ route('permakanan-filter') }}" class="m-5">
+            <form method="GET" action="{{ route('dataKeluarga-filter') }}" class="m-5">
                 @csrf
 
                 <div class="row">
@@ -83,7 +81,6 @@
             <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
             <script>
                 $(document).ready(function(){
-
                     $('#kecamatan').change(function(){
                         var kecamatanID = $(this).val();
                         if(kecamatanID){
@@ -134,56 +131,6 @@
                         }
                     });
 
-
-                    // $('#id_kelurahan').change(function(){
-                    //     var kelurahanID = $(this).val();
-                    //     if(kelurahanID){
-                    //         $.ajax({
-                    //             type:"GET",
-                    //             url:"{{ url('/getKeluarga') }}",
-                    //             data: {kelurahanID: kelurahanID},
-                    //             dataType: 'JSON',
-                    //             success:function(res){
-                    //                 if(res){
-                    //                     $("#id_keluarga").empty();
-                    //                     $("#id_keluarga").append('<option>---Pilih Keluarga---</option>');
-                    //                     $.each(res,function(index, keluarga){
-                    //                         $("#id_keluarga").append('<option value="'+keluarga.id+'">'+keluarga.no_kk+ ' - '+keluarga.alamat+ '</option>');
-                    //                     });
-                    //                 }else{
-                    //                 $("#id_keluarga").empty();
-                    //                 }
-                    //             }
-                    //         });
-                    //     }else{
-                    //         $("#id_keluarga").empty();
-                    //     }
-                    // });
-
-                    // $('#id_keluarga').change(function(){
-                    //     var keluargaID = $(this).val();
-                    //     if(keluargaID){
-                    //         $.ajax({
-                    //             type:"GET",
-                    //             url:"{{ url('/getBencana') }}",
-                    //             data: {keluargaID: keluargaID},
-                    //             dataType: 'JSON',
-                    //             success:function(res){
-                    //                 if(res){
-                    //                     $("#id_bencana").empty();
-                    //                     $("#id_bencana").append('<option>---Pilih Bencana---</option>');
-                    //                     $.each(res,function(id,jns_bencana){
-                    //                         $("#id_bencana").append('<option value="'+id+'">'+jns_bencana+'</option>');
-                    //                     });
-                    //                 }else{
-                    //                 $("#id_bencana").empty();
-                    //                 }
-                    //             }
-                    //         });
-                    //     }else{
-                    //         $("#id_bencana").empty();
-                    //     }
-                    // });
 
                 });
             </script>

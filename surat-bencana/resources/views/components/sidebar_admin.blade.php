@@ -25,7 +25,7 @@
     </div>
 
     <!-- Nav Item - Pages Collapse Menu -->
-    <li class="nav-item {{ Request::is('berita-acara', 'data-keluarga', 'bansos/filter', 'permakanan/filter') ? 'active' : '' }}">
+    <li class="nav-item {{ Request::is('beritaAcara/filter', 'dataKeluarga/filter', 'bansos/filter', 'permakanan/filter') ? 'active' : '' }}">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
             aria-expanded="true" aria-controls="collapseTwo">
             <i class="fas fa-fw fa-file-invoice"></i>
@@ -34,8 +34,8 @@
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Surat:</h6>
-                <a style="color: #0c4e23;" class="collapse-item {{ Request::is('berita-acara') ? 'active' : '' }}" href="{{ route('berita-acara') }}">Berita Acara Serah Terima</a>
-                <a style="color: #0c4e23;" class="collapse-item {{ Request::is('data-keluarga') ? 'active' : '' }}" href="{{ route('data-keluarga') }}">Data Keluarga Korban</a>
+                <a style="color: #0c4e23;" class="collapse-item {{ Request::is('beritaAcara/filter') ? 'active' : '' }}" href="{{ route('beritaAcara-filter-form') }}">Berita Acara Serah Terima</a>
+                <a style="color: #0c4e23;" class="collapse-item {{ Request::is('dataKeluarga/filter') ? 'active' : '' }}" href="{{ route('dataKeluarga-filter-form') }}">Data Keluarga Korban</a>
                 <a style="color: #0c4e23;" class="collapse-item {{ Request::is('bansos/filter') ? 'active' : '' }}" href="{{ route('bansos-filter-form') }}">Data Bansos</a>
                 <a style="color: #0c4e23;" class="collapse-item {{ Request::is('permakanan/filter') ? 'active' : '' }}" href="{{ route('permakanan-filter-form') }}">Data Permakanan</a>
             </div>
@@ -90,11 +90,11 @@
     </li>
 
     <!-- Nav Item -->
-    <li class="nav-item">
+    {{-- <li class="nav-item">
         <a class="nav-link" href="charts.html">
             <i class="fas fa-fw fa-print"></i>
             <span>Cetak Laporan</span></a>
-    </li>
+    </li> --}}
 
 
     <!-- Divider -->

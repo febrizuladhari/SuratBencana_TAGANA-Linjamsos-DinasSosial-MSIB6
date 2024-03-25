@@ -21,9 +21,10 @@ class IdentitasController extends Controller
 {
     public function index()
     {
-        $identitas = Identitas::get();
+        $identitass = Identitas::with('keluarga.kelurahan.kecamatan')->get();
 
-        return view('admin.identitas', ['identitas' => $identitas]);
+        // dd($identitass);
+        return view('admin.identitas', compact('identitass'));
     }
 
 

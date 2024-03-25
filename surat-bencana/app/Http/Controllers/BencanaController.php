@@ -22,7 +22,7 @@ class BencanaController extends Controller
 
     public function index()
     {
-        $bencanas = Bencana::with('keluarga')->get();
+        $bencanas = Bencana::with('keluarga.kelurahan.kecamatan')->get();
         return view('admin.bencana', compact('bencanas'));
     }
 
@@ -41,10 +41,14 @@ class BencanaController extends Controller
             $request->validate([
                 'jns_bencana' => 'required|string|max:255',
                 'tanggal_bencana' => 'required|date',
+                'alamat_bencana' => 'required',
+                'waktu_bencana' => 'required',
             ]);
 
             $bencana->jns_bencana = $request->jns_bencana;
             $bencana->tanggal_bencana = $request->tanggal_bencana;
+            $bencana->alamat_bencana = $request->alamat_bencana;
+            $bencana->waktu_bencana = $request->waktu_bencana;
 
             $bencana->save();
             // dd($bencana);
@@ -110,13 +114,17 @@ class BencanaController extends Controller
             $request->validate([
                 'id_keluarga' => 'required',
                 'jns_bencana' => 'required',
-                'tanggal_bencana' => 'required|date',
+                'tanggal_bencana' => 'required',
+                'alamat_bencana' => 'required',
+                'waktu_bencana' => 'required',
             ]);
 
             $bencana = Bencana::create([
                 'id_keluarga' => $request->id_keluarga,
                 'jns_bencana' => $request->jns_bencana,
                 'tanggal_bencana' => $request->tanggal_bencana,
+                'alamat_bencana' => $request->alamat_bencana,
+                'waktu_bencana' => $request->waktu_bencana,
             ]);
 
             event(new ModelCreated($bencana, auth()->user()));

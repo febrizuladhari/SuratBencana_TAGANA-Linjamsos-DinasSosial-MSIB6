@@ -9,8 +9,6 @@
 <!-- Content -->
 @section('content')
 
-
-
     <!-- Hasil Fiter Data Bansos -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
@@ -29,7 +27,7 @@
         </div>
         <div class="card-body">
             <div class="table-responsive table-hover">
-                <table class="table table-bordered" width="100%" cellspacing="0">
+                <table id="dataTable" class="table table-bordered display nowrap" width="100%" cellspacing="0">
                     <thead class="thead-light">
                         <tr>
                             <th>No.</th>
@@ -37,17 +35,18 @@
                             <th>NIK</th>
                             <th>Nomor KK</th>
                             <th>Jenis Bencana</th>
-                            <th>Tanggal Kejadian</th>
-                            <th>Alamat Kejadian</th>
+                            <th>Tanggal Bencana</th>
+                            <th>Alamat Bencana</th>
                             <th>Alamat KK</th>
                             <th>Kecamatan</th>
                         </tr>
                     </thead>
 
                     <tbody>
+                        <?php $no = 1; ?>
                         @foreach ($keluargas as $keluarga)
                             <tr>
-                                <td>{{ $loop->iteration }}</td>
+                                <td>{{ $no++ }}</td>
                                 <td>{{ $keluarga->identitas->first()->nama ?? ''  }}</td>
                                 <td>{{ $keluarga->identitas->first()->nik ?? '' }}</td>
                                 <td>{{ $keluarga->identitas->first()->no_kk ?? '' }}</td>

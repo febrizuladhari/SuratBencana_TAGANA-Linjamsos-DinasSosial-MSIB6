@@ -28,10 +28,14 @@
         </div>
         <div class="card-body">
             <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <table class="table table-bordered display nowrap" id="dataTable" width="100%" cellspacing="0">
                     <thead class="thead-light">
                         <tr>
+                            <th>No.</th>
                             <th>Nomor KK</th>
+                            <th>Alamat</th>
+                            <th>Kelurahan</th>
+                            <th>Kecamatan</th>
                             <th>Bencana</th>
                             <th>Bantuan</th>
                             <th>Aksi</th>
@@ -39,9 +43,14 @@
                     </thead>
 
                     <tbody>
+                        <?php $no = 1; ?>
                         @foreach ($detailBantuans as $detailBantuan)
                         <tr>
+                            <td>{{ $no++ }}</td>
                             <td>{{ $detailBantuan->bantuan->bencana->keluarga->no_kk }}</td>
+                            <td>{{ $detailBantuan->bantuan->bencana->keluarga->alamat }}</td>
+                            <td>{{ $detailBantuan->bantuan->bencana->keluarga->kelurahan->nama_kelurahan }}</td>
+                            <td>{{ $detailBantuan->bantuan->bencana->keluarga->kelurahan->kecamatan->nama_kecamatan }}</td>
                             <td>{{ $detailBantuan->bantuan->bencana->jns_bencana }}</td>
                             <td>{{ $detailBantuan->bantuan->jns_bantuan }}</td>
                             <td>

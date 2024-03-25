@@ -43,4 +43,5 @@ class Identitas extends Model
         return $this->belongsTo(Keluarga::class, 'no_kk', 'no_kk');
     }
 
+
 }

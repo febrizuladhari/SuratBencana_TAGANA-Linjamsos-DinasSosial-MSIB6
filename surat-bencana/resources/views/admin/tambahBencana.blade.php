@@ -50,8 +50,16 @@
                 <input type="text" class="form-control" id="jns_bencana" name="jns_bencana" required>
             </div>
             <div class="form-group">
+                <label for="alamat_bencana">Alamat Bencana</label>
+                <input type="text" class="form-control" id="alamat_bencana" name="alamat_bencana" required>
+            </div>
+            <div class="form-group">
                 <label for="tanggal_bencana">Tanggal Bencana</label>
                 <input type="date" class="form-control" id="tanggal_bencana" name="tanggal_bencana" required>
+            </div>
+            <div class="form-group">
+                <label for="waktu_bencana">Waktu Bencana</label>
+                <input type="time" class="form-control" id="waktu_bencana" name="waktu_bencana" required>
             </div>
             <div class="modal-footer mt-4">
                 <button type="reset" class="btn btn-secondary">Reset</button>

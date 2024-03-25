@@ -42,7 +42,7 @@
             </div>
 
             <div class="form-group">
-                <label for="no_kk">Keluarga</label>
+                <label for="no_kk">Nomor Kartu Keluarga</label>
                 <input type="text" class="form-control" id="no_kk" name="no_kk" required>
             </div>
             <div class="form-group">

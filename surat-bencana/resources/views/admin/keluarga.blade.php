@@ -27,13 +27,14 @@
         </div>
         <div class="card-body">
             <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <table class="table table-bordered display nowrap" id="dataTable" width="100%" cellspacing="0">
                     <thead class="thead-light">
                         <tr>
                             <th>No.</th>
-                            <th>No. KK</th>
-                            <th>Nama Kepala Keluarga</th>
+                            <th>Nomor KK</th>
                             <th>Alamat</th>
+                            <th>Kelurahan</th>
+                            <th>Kecamatan</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
@@ -43,8 +44,10 @@
                         <tr>
                             <td>{{ $key + 1 }}</td>
                             <td>{{ $keluarga->no_kk }}</td>
-                            <td>{{ $keluarga->nama }}</td>
                             <td>{{ $keluarga->alamat }}</td>
+                            <td>{{ $keluarga->kelurahan->nama_kelurahan }}</td>
+                            <td>{{ $keluarga->kelurahan->kecamatan->nama_kecamatan }}</td>
+                            {{-- <td>{{ $keluarga->bencana->jns_bencana }}</td> --}}
                             <td>
                                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editBencanaModal_{{ $keluarga->id }}">
                                     <i class="fas fa-edit fa-sm fa-fw mr-2"></i>Edit

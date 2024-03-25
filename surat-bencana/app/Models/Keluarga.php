@@ -49,5 +49,10 @@ class Keluarga extends Model
         return $this->hasMany(Identitas::class, 'no_kk', 'no_kk');
     }
 
+    // public function identitas()
+    // {
+    //     return $this->belongsTo(Identitas::class, 'no_kk', 'no_kk');
+    // }
+
 
 }

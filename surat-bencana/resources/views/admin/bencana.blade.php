@@ -27,22 +27,35 @@
         </div>
         <div class="card-body">
             <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <table class="table table-bordered display nowrap" id="dataTable" width="100%" cellspacing="0">
                     <thead class="thead-light">
                         <tr>
+                            <th>No.</th>
                             <th>Nomor KK</th>
+                            <th>Alamat</th>
+                            <th>Alamat Bencana</th>
                             <th>Bencana</th>
                             <th>Tanggal Bencana</th>
+                            <th>Waktu Bencana</th>
+                            <th>Kelurahan</th>
+                            <th>Kecamatan</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
 
                     <tbody>
+                        <?php $no = 1; ?>
                         @foreach ($bencanas as $bencana)
                         <tr>
+                            <td>{{ $no++ }}</td>
                             <td>{{ $bencana->keluarga->no_kk }}</td>
+                            <td>{{ $bencana->keluarga->alamat }}</td>
+                            <td>{{ $bencana->alamat_bencana }}</td>
                             <td>{{ $bencana->jns_bencana }}</td>
                             <td>{{ date('d-m-Y', strtotime($bencana->tanggal_bencana)) }}</td>
+                            <td>{{ $bencana->waktu_bencana }}</td>
+                            <td>{{ $bencana->keluarga->kelurahan->nama_kelurahan }}</td>
+                            <td>{{ $bencana->keluarga->kelurahan->kecamatan->nama_kecamatan }}</td>
                             <td>
                                 <button type="button" class="btn btn-primary mx-1" data-toggle="modal" data-target="#editBencanaModal_{{ $bencana->id }}">
                                     <i class="fas fa-edit fa-sm fa-fw mr-2"></i>Edit
@@ -76,8 +89,16 @@
                                             <input type="text" class="form-control" id="jns_bencana" name="jns_bencana" value="{{ $bencana->jns_bencana }}">
                                         </div>
                                         <div class="form-group">
+                                            <label for="alamat_bencana">Alamat Bencana</label>
+                                            <input type="text" class="form-control" id="alamat_bencana" name="alamat_bencana" value="{{ $bencana->alamat_bencana }}">
+                                        </div>
+                                        <div class="form-group">
                                             <label for="tanggal_bencana">Tanggal Bencana</label>
                                             <input type="date" class="form-control" id="tanggal_bencana" name="tanggal_bencana" value="{{ $bencana->tanggal_bencana }}">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="waktu_bencana">Waktu Bencana</label>
+                                            <input type="time" class="form-control" id="waktu_bencana" name="waktu_bencana" value="{{ $bencana->waktu_bencana }}">
                                         </div>
 
                                         <div class="modal-footer">
@@ -113,8 +134,16 @@
                                             <input type="text" class="form-control" id="jns_bencana" name="jns_bencana" value="{{ $bencana->jns_bencana }}" disabled>
                                         </div>
                                         <div class="form-group">
+                                            <label for="alamat_bencana">Alamat Bencana</label>
+                                            <input type="text" class="form-control" id="alamat_bencana" name="alamat_bencana" value="{{ $bencana->alamat_bencana }}" disabled>
+                                        </div>
+                                        <div class="form-group">
                                             <label for="tanggal_bencana">Tanggal Bencana</label>
                                             <input type="date" class="form-control" id="tanggal_bencana" name="tanggal_bencana" value="{{ $bencana->tanggal_bencana }}" disabled>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="waktu_bencana">Waktu Bencana</label>
+                                            <input type="time" class="form-control" id="waktu_bencana" name="waktu_bencana" value="{{ $bencana->waktu_bencana }}" disabled>
                                         </div>
 
                                         <div class="modal-footer mt-4">
