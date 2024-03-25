@@ -28,21 +28,28 @@ class KelurahanSeeder extends Seeder
         ]);
         
         Kelurahan::create([
-            'nama_kelurahan' => 'Harjosari-I',
+            'nama_kelurahan' => 'Harjosari I',
             'nip_lurah' => '19731114 199403 2 003',
             'nama_lurah' => 'SAHARA HARAHAP, AP',
             'id_kecamatan' => 1,
         ]);
         
         Kelurahan::create([
-            'nama_kelurahan' => 'Siti Rejo-II',
+            'nama_kelurahan' => 'Harjosari II',
+            'nip_lurah' => '19731114 199403 2 003',
+            'nama_lurah' => 'Prof. Dr. Yusuf Pandiangan, S.Kom, MCS, Ph.D',
+            'id_kecamatan' => 1,
+        ]);
+
+        Kelurahan::create([
+            'nama_kelurahan' => 'Siti Rejo II',
             'nip_lurah' => '19890614 201206 1 001',
             'nama_lurah' => 'Dr. ZULKIFLI SYAHPUTRA PULUNGAN, S.STP, M.AP',
             'id_kecamatan' => 1,
         ]);
         
         Kelurahan::create([
-            'nama_kelurahan' => 'Siti Rejo-III',
+            'nama_kelurahan' => 'Siti Rejo III',
             'nip_lurah' => '19830405 200112 1 004',
             'nama_lurah' => 'ALBENA BOANG MANALU, SSTP, M.SP',
             'id_kecamatan' => 1,
@@ -56,28 +63,28 @@ class KelurahanSeeder extends Seeder
         ]);
 
         Kelurahan::create([
-            'nama_kelurahan' => 'Kotamatsum-I',
+            'nama_kelurahan' => 'Kotamatsum I',
             'nip_lurah' => '19690103 200801 1 002',
             'nama_lurah' => 'INDRA OLOAN NASUTION, S.Sos',
             'id_kecamatan' => 2,
         ]);
         
         Kelurahan::create([
-            'nama_kelurahan' => 'Kotamatsum-II',
+            'nama_kelurahan' => 'Kotamatsum II',
             'nip_lurah' => '19871201 200602 2 001',
             'nama_lurah' => 'DESY CHALIZAH PERMATANINGTYAS HARAHAP, SSTP, MSP',
             'id_kecamatan' => 2,
         ]);
         
         Kelurahan::create([
-            'nama_kelurahan' => 'Kotamatsum-IV',
+            'nama_kelurahan' => 'Kotamatsum IV',
             'nip_lurah' => '19760805 199602 1 003',
             'nama_lurah' => 'MUHAMMAD YUSUF HANAFIAH SORMIN, S.Sos',
             'id_kecamatan' => 2,
         ]);
         
         Kelurahan::create([
-            'nama_kelurahan' => 'Pandau Hulu-II',
+            'nama_kelurahan' => 'Pandau Hulu II',
             'nip_lurah' => '19850919 200412 1 001',
             'nama_lurah' => 'RIZKI HARI ADAM LUBIS, S.STP',
             'id_kecamatan' => 2,
@@ -98,35 +105,42 @@ class KelurahanSeeder extends Seeder
         ]);
         
         Kelurahan::create([
-            'nama_kelurahan' => 'Sei Rengas-II',
+            'nama_kelurahan' => 'Sei Rengas II',
             'nip_lurah' => '19910312 201206 1 003',
             'nama_lurah' => 'MHD HARVINSYAH ROZI HARAHAP, S.STP',
             'id_kecamatan' => 2,
         ]);
         
         Kelurahan::create([
-            'nama_kelurahan' => 'Sukaramai-I',
+            'nama_kelurahan' => 'Sukaramai I',
             'nip_lurah' => '19731221 199303 1 001',
             'nama_lurah' => 'HASRUN SYARIF DONGORAN, S.Sos',
             'id_kecamatan' => 2,
         ]);
+
+        Kelurahan::create([
+            'nama_kelurahan' => 'Sukaramai II',
+            'nip_lurah' => '19731114 199403 2 003',
+            'nama_lurah' => 'Prof. Dr. Yusuf Pandiangan, S.Kom, MCS, Ph.D',
+            'id_kecamatan' => 2,
+        ]);
         
         Kelurahan::create([
-            'nama_kelurahan' => 'Tegal Sari-I',
+            'nama_kelurahan' => 'Tegal Sari I',
             'nip_lurah' => '19840417 201101 2 015',
             'nama_lurah' => 'HAFSAH NUR, S.E.',
             'id_kecamatan' => 2,
         ]);
         
         Kelurahan::create([
-            'nama_kelurahan' => 'Tegal Sari-II',
+            'nama_kelurahan' => 'Tegal Sari II',
             'nip_lurah' => '19840201 200312 1 001',
             'nama_lurah' => 'RANGGA KARFIKA SAKTI, S.STP',
             'id_kecamatan' => 2,
         ]);
         
         Kelurahan::create([
-            'nama_kelurahan' => 'Tegal Sari-III',
+            'nama_kelurahan' => 'Tegal Sari III',
             'nip_lurah' => '19840407 200903 1 005',
             'nama_lurah' => 'IRWANSYAH, S.Pd, M.Pd',
             'id_kecamatan' => 2,
@@ -217,6 +231,13 @@ class KelurahanSeeder extends Seeder
         ]);        
         
         Kelurahan::create([
+            'nama_kelurahan' => 'Bagan Deli',
+            'nip_lurah' => '19731114 199403 2 003',
+            'nama_lurah' => 'Prof. Dr. Yusuf Pandiangan, S.Kom, MCS, Ph.D',
+            'id_kecamatan' => 5,
+        ]);
+
+        Kelurahan::create([
             'nama_kelurahan' => 'Belawan Bahagia',
             'nip_lurah' => '19730211 200701 1 016',
             'nama_lurah' => 'FAIHSYAL AMIL, S.Sos',
@@ -224,12 +245,26 @@ class KelurahanSeeder extends Seeder
         ]);
         
         Kelurahan::create([
-            'nama_kelurahan' => 'Belawan-I',
+            'nama_kelurahan' => 'Belawan Bahari',
+            'nip_lurah' => '19731114 199403 2 003',
+            'nama_lurah' => 'Prof. Dr. Yusuf Pandiangan, S.Kom, MCS, Ph.D',
+            'id_kecamatan' => 5,
+        ]);
+
+        Kelurahan::create([
+            'nama_kelurahan' => 'Belawan I',
             'nip_lurah' => '19810716 200801 1 001',
             'nama_lurah' => 'LUKMANUL HAKIM, S.H.',
             'id_kecamatan' => 5,
         ]);
         
+        Kelurahan::create([
+            'nama_kelurahan' => 'Belawan II',
+            'nip_lurah' => '19731114 199403 2 003',
+            'nama_lurah' => 'Prof. Dr. Yusuf Pandiangan, S.Kom, MCS, Ph.D',
+            'id_kecamatan' => 5,
+        ]);
+
         Kelurahan::create([
             'nama_kelurahan' => 'Belawan Sicanang',
             'nip_lurah' => '19851212 200502 2 001',
@@ -264,6 +299,13 @@ class KelurahanSeeder extends Seeder
             'nama_lurah' => 'NORMALINA TIODORA, S.E. MAP',
             'id_kecamatan' => 6,
         ]);
+
+        Kelurahan::create([
+            'nama_kelurahan' => 'Tanjung Mulia Hilir',
+            'nip_lurah' => '19731114 199403 2 003',
+            'nama_lurah' => 'Prof. Dr. Yusuf Pandiangan, S.Kom, MCS, Ph.D',
+            'id_kecamatan' => 6,
+        ]);
         
         Kelurahan::create([
             'nama_kelurahan' => 'Titi Papan',
@@ -285,23 +327,30 @@ class KelurahanSeeder extends Seeder
             'nama_lurah' => 'JULPANUDDIN, S.H.',
             'id_kecamatan' => 7,
         ]);
+
+        Kelurahan::create([
+            'nama_kelurahan' => 'Medan Tenggara',
+            'nip_lurah' => '19731114 199403 2 003',
+            'nama_lurah' => 'Prof. Dr. Yusuf Pandiangan, S.Kom, MCS, Ph.D',
+            'id_kecamatan' => 7,
+        ]);
         
         Kelurahan::create([
-            'nama_kelurahan' => 'Tegal Sari Mandala-I',
+            'nama_kelurahan' => 'Tegal Sari Mandala I',
             'nip_lurah' => '19900310 201406 1 001',
             'nama_lurah' => 'MUHAMMAD NANDA HARAPAN SIREGAR, S.STP',
             'id_kecamatan' => 7,
         ]);
         
         Kelurahan::create([
-            'nama_kelurahan' => 'Tegal Sari Mandala-II',
+            'nama_kelurahan' => 'Tegal Sari Mandala II',
             'nip_lurah' => '19860116 200602 1 001',
             'nama_lurah' => 'RO SINTONG JEITA SM, S.STP, M.Si',
             'id_kecamatan' => 7,
         ]);
         
         Kelurahan::create([
-            'nama_kelurahan' => 'Tegal Sari Mandala-III',
+            'nama_kelurahan' => 'Tegal Sari Mandala III',
             'nip_lurah' => '19750603 200701 1 024',
             'nama_lurah' => 'MUHAMMAD RIZKI, S.Sos',
             'id_kecamatan' => 7,
@@ -355,7 +404,7 @@ class KelurahanSeeder extends Seeder
             'nama_lurah' => 'IRWANTA GINTING, AP',
             'id_kecamatan' => 8,
         ]);
-     
+    
         Kelurahan::create([
             'nama_kelurahan' => 'Gedung Johor',
             'nip_lurah' => '19910412 201206 1 001',
@@ -383,6 +432,13 @@ class KelurahanSeeder extends Seeder
             'nama_lurah' => 'RIVAI RAMADHANA HARAHAP, S.Si, M.A.P.',
             'id_kecamatan' => 9,
         ]);
+
+        Kelurahan::create([
+            'nama_kelurahan' => 'Sukamaju',
+            'nip_lurah' => '19731114 199403 2 003',
+            'nama_lurah' => 'Prof. Dr. Yusuf Pandiangan, S.Kom, MCS, Ph.D',
+            'id_kecamatan' => 9,
+        ]);
         
         Kelurahan::create([
             'nama_kelurahan' => 'Titi Kuning',
@@ -392,7 +448,7 @@ class KelurahanSeeder extends Seeder
         ]);
 
         Kelurahan::create([
-            'nama_kelurahan' => 'Kotamatsum-III',
+            'nama_kelurahan' => 'Kotamatsum III',
             'nip_lurah' => '19690107 199303 2 003',
             'nama_lurah' => 'MIRNALOY, S.H.',
             'id_kecamatan' => 10,
@@ -406,7 +462,7 @@ class KelurahanSeeder extends Seeder
         ]);
         
         Kelurahan::create([
-            'nama_kelurahan' => 'Pandau Hulu-I',
+            'nama_kelurahan' => 'Pandau Hulu I',
             'nip_lurah' => '19871106 200701 2 001',
             'nama_lurah' => 'MARISI DUMA TAMBA, S.IP, M.Ec.Dev',
             'id_kecamatan' => 10,
@@ -427,21 +483,28 @@ class KelurahanSeeder extends Seeder
         ]);
         
         Kelurahan::create([
-            'nama_kelurahan' => 'Sei Rengas-I',
+            'nama_kelurahan' => 'Sei Rengas I',
             'nip_lurah' => '19780829 201001 2 006',
             'nama_lurah' => 'EVA LUCIA BR SIMAMORA, S.E.',
             'id_kecamatan' => 10,
         ]);
+
+        Kelurahan::create([
+            'nama_kelurahan' => 'Sitirejo I',
+            'nip_lurah' => '19731114 199403 2 003',
+            'nama_lurah' => 'Prof. Dr. Yusuf Pandiangan, S.Kom, MCS, Ph.D',
+            'id_kecamatan' => 10,
+        ]);
         
         Kelurahan::create([
-            'nama_kelurahan' => 'Sudirejo-I',
+            'nama_kelurahan' => 'Sudirejo I',
             'nip_lurah' => '19700925 200801 1 002',
             'nama_lurah' => 'KASRIN SIBAGARIANG, SE, M.M',
             'id_kecamatan' => 10,
         ]);
         
         Kelurahan::create([
-            'nama_kelurahan' => 'Sudirejo-II',
+            'nama_kelurahan' => 'Sudirejo II',
             'nip_lurah' => '19650527 200701 1 021',
             'nama_lurah' => 'IRAWADI, S.H.',
             'id_kecamatan' => 10,
@@ -465,6 +528,13 @@ class KelurahanSeeder extends Seeder
             'nama_kelurahan' => 'Besar',
             'nip_lurah' => '19920510 201507 1 003',
             'nama_lurah' => 'GANDI GUSRI, S.STP, M.Si',
+            'id_kecamatan' => 11,
+        ]);
+
+        Kelurahan::create([
+            'nama_kelurahan' => 'Martubung',
+            'nip_lurah' => '19731114 199403 2 003',
+            'nama_lurah' => 'Prof. Dr. Yusuf Pandiangan, S.Kom, MCS, Ph.D',
             'id_kecamatan' => 11,
         ]);
         
@@ -587,9 +657,16 @@ class KelurahanSeeder extends Seeder
             'nama_lurah' => 'FAISAL HARAHAP, S.Kom, M.A.P.',
             'id_kecamatan' => 14,
         ]);
+
+        Kelurahan::create([
+            'nama_kelurahan' => 'Sei Kera Hilir I',
+            'nip_lurah' => '19731114 199403 2 003',
+            'nama_lurah' => 'Prof. Dr. Yusuf Pandiangan, S.Kom, MCS, Ph.D',
+            'id_kecamatan' => 14,
+        ]);
         
         Kelurahan::create([
-            'nama_kelurahan' => 'Sei Kera Hilir-II',
+            'nama_kelurahan' => 'Sei Kera Hilir II',
             'nip_lurah' => '19680329 199803 1 003',
             'nama_lurah' => 'MUSONNIP, S.IP',
             'id_kecamatan' => 14,
@@ -603,14 +680,14 @@ class KelurahanSeeder extends Seeder
         ]);
         
         Kelurahan::create([
-            'nama_kelurahan' => 'Sidorame Barat-I',
+            'nama_kelurahan' => 'Sidorame Barat I',
             'nip_lurah' => '19871111 200701 1 001',
             'nama_lurah' => 'YOGI PRAYOGA, S.IP',
             'id_kecamatan' => 14,
         ]);
         
         Kelurahan::create([
-            'nama_kelurahan' => 'Sidorame Barat-II',
+            'nama_kelurahan' => 'Sidorame Barat II',
             'nip_lurah' => '19660410 200701 1 007',
             'nama_lurah' => 'MANGASITUA PASARIBU, S.Sos, M.Si',
             'id_kecamatan' => 14,
@@ -631,6 +708,13 @@ class KelurahanSeeder extends Seeder
         ]);
 
         Kelurahan::create([
+            'nama_kelurahan' => 'Petisah Tegah',
+            'nip_lurah' => '19731114 199403 2 003',
+            'nama_lurah' => 'Prof. Dr. Yusuf Pandiangan, S.Kom, MCS, Ph.D',
+            'id_kecamatan' => 15,
+        ]);
+
+        Kelurahan::create([
             'nama_kelurahan' => 'Sei Putih Barat',
             'nip_lurah' => '19730220 200003 2 002',
             'nama_lurah' => 'LINDA SARIATY SIAGIAN, S.E.',
@@ -645,21 +729,21 @@ class KelurahanSeeder extends Seeder
         ]);
         
         Kelurahan::create([
-            'nama_kelurahan' => 'Sei Putih Timur-I',
+            'nama_kelurahan' => 'Sei Putih Timur I',
             'nip_lurah' => '19840904 201001 1 015',
             'nama_lurah' => 'ALBERT KARDI SIANIPAR, S.E, M.H.',
             'id_kecamatan' => 15,
         ]);
         
         Kelurahan::create([
-            'nama_kelurahan' => 'Sei Putih Timur-II',
+            'nama_kelurahan' => 'Sei Putih Timur II',
             'nip_lurah' => '19781217 199803 1 001',
             'nama_lurah' => 'DENY MUKHTAR ZEBUA, SAP',
             'id_kecamatan' => 15,
         ]);
         
         Kelurahan::create([
-            'nama_kelurahan' => 'Sei Sikambing-d',
+            'nama_kelurahan' => 'Sei Sikambing D',
             'nip_lurah' => '19930305 201507 1 001',
             'nama_lurah' => 'LAMBOK SAMUEL PARLAUNGAN, S.STP',
             'id_kecamatan' => 15,
@@ -708,6 +792,13 @@ class KelurahanSeeder extends Seeder
         ]);
 
         Kelurahan::create([
+            'nama_kelurahan' => 'Asam Kumbang',
+            'nip_lurah' => '19731114 199403 2 003',
+            'nama_lurah' => 'Prof. Dr. Yusuf Pandiangan, S.Kom, MCS, Ph.D',
+            'id_kecamatan' => 17,
+        ]);
+
+        Kelurahan::create([
             'nama_kelurahan' => 'Beringin',
             'nip_lurah' => '19771210 200902 1 001',
             'nama_lurah' => 'IRWANSYAH, S.H, MM',
@@ -715,14 +806,14 @@ class KelurahanSeeder extends Seeder
         ]);
         
         Kelurahan::create([
-            'nama_kelurahan' => 'Padang Bulan Selayang-I',
+            'nama_kelurahan' => 'Padang Bulan Selayang I',
             'nip_lurah' => '19850802 201001 1 014',
             'nama_lurah' => 'REYZA FAHLEVY LUBIS, S.E.',
             'id_kecamatan' => 17,
         ]);
         
         Kelurahan::create([
-            'nama_kelurahan' => 'Padang Bulan Selayang-II',
+            'nama_kelurahan' => 'Padang Bulan Selayang II',
             'nip_lurah' => '19921109 201406 2 002',
             'nama_lurah' => 'NOVIA ZAHRA, S.STP',
             'id_kecamatan' => 17,
@@ -757,7 +848,7 @@ class KelurahanSeeder extends Seeder
         ]);
         
         Kelurahan::create([
-            'nama_kelurahan' => 'Sei Sikambing-B',
+            'nama_kelurahan' => 'Sei Sikambing B',
             'nip_lurah' => '19900629 201206 1 004',
             'nama_lurah' => 'MUHAMMAD IQBAL, S.STP',
             'id_kecamatan' => 18,
@@ -771,10 +862,24 @@ class KelurahanSeeder extends Seeder
         ]);
         
         Kelurahan::create([
+            'nama_kelurahan' => 'Sunggal',
+            'nip_lurah' => '19731114 199403 2 003',
+            'nama_lurah' => 'Prof. Dr. Yusuf Pandiangan, S.Kom, MCS, Ph.D',
+            'id_kecamatan' => 18,
+        ]);
+
+        Kelurahan::create([
             'nama_kelurahan' => 'Tanjung Rejo',
             'nip_lurah' => '19930112 201507 1 002',
             'nama_lurah' => 'ZIA RIDHO IKHWA, S.STP',
             'id_kecamatan' => 18,
+        ]);
+
+        Kelurahan::create([
+            'nama_kelurahan' => 'Bandar Selamat',
+            'nip_lurah' => '19731114 199403 2 003',
+            'nama_lurah' => 'Prof. Dr. Yusuf Pandiangan, S.Kom, MCS, Ph.D',
+            'id_kecamatan' => 19,
         ]);
 
         Kelurahan::create([
@@ -841,19 +946,26 @@ class KelurahanSeeder extends Seeder
         ]);
         
         Kelurahan::create([
-            'nama_kelurahan' => 'Glugur Darat-I',
+            'nama_kelurahan' => 'Glugur Darat I',
             'nip_lurah' => '19921212 201406 2 002',
             'nama_lurah' => 'SINTHIYA ARDITA PRATIWI, S.STP, MAP',
             'id_kecamatan' => 20,
         ]);
         
         Kelurahan::create([
-            'nama_kelurahan' => 'Glugur Darat-II',
+            'nama_kelurahan' => 'Glugur Darat II',
             'nip_lurah' => '19790501 200801 1 004',
             'nama_lurah' => 'RIKY IRAWAN NASUTION, S.Sos',
             'id_kecamatan' => 20,
         ]);
         
+        Kelurahan::create([
+            'nama_kelurahan' => 'Perintis',
+            'nip_lurah' => '19731114 199403 2 003',
+            'nama_lurah' => 'Prof. Dr. Yusuf Pandiangan, S.Kom, MCS, Ph.D',
+            'id_kecamatan' => 20,
+        ]);
+
         Kelurahan::create([
             'nama_kelurahan' => 'Pulo Brayan Bengkel Baru',
             'nip_lurah' => '19770112 201409 1 001',
@@ -869,14 +981,14 @@ class KelurahanSeeder extends Seeder
         ]);
         
         Kelurahan::create([
-            'nama_kelurahan' => 'Pulo Brayan Darat-I',
+            'nama_kelurahan' => 'Pulo Brayan Darat I',
             'nip_lurah' => '19830412 201001 1 038',
             'nama_lurah' => 'HENDRA KURNIAWAN, S.T.',
             'id_kecamatan' => 20,
         ]);
         
         Kelurahan::create([
-            'nama_kelurahan' => 'Pulo Brayan Darat-II',
+            'nama_kelurahan' => 'Pulo Brayan Darat II',
             'nip_lurah' => '19840121 201001 2 014',
             'nama_lurah' => 'NURDAMAYANTI SIREGAR, SE, M.AP',
             'id_kecamatan' => 20,
@@ -925,7 +1037,7 @@ class KelurahanSeeder extends Seeder
         ]);
         
         Kelurahan::create([
-            'nama_kelurahan' => 'Sidalinngkar-B',
+            'nama_kelurahan' => 'Simalingkar B',
             'nip_lurah' => '19920804 201406 1 003',
             'nama_lurah' => 'ANDIKA YEHEZKIEL SEMBIRING, S.STP',
             'id_kecamatan' => 21,

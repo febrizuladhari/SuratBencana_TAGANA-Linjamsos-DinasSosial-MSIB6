@@ -26,24 +26,24 @@ class DatabaseSeeder extends Seeder
         $this->call([
             KelurahanSeeder::class,
         ]);
-        $this->call([
-            KeluargaSeeder::class,
-        ]);
-        $this->call([
-            BencanaSeeder::class,
-        ]);
-        $this->call([
-            BantuanSeeder::class,
-        ]);
-        $this->call([
-            IdentitasSeeder::class,
-        ]);
-        $this->call([
-            UserSeeder::class,
-        ]);
-        $this->call([
-            DetailBantuanSeeder::class,
-        ]);
+        // $this->call([
+        //     KeluargaSeeder::class,
+        // ]);
+        // $this->call([
+        //     BencanaSeeder::class,
+        // ]);
+        // $this->call([
+        //     BantuanSeeder::class,
+        // ]);
+        // $this->call([
+        //     IdentitasSeeder::class,
+        // ]);
+        // $this->call([
+        //     UserSeeder::class,
+        // ]);
+        // $this->call([
+        //     DetailBantuanSeeder::class,
+        // ]);
 
     }
 }

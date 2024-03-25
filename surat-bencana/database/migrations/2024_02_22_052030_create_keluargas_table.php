@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('keluargas', function (Blueprint $table) {
             $table->id();
             // $table->char('no_kk', 16)->unique();
-            $table->char('no_kk', 2)->index();
+            $table->char('no_kk', 16)->index();
             $table->text('alamat');
             $table->unsignedBigInteger('id_kelurahan');
             $table->foreign('id_kelurahan')->references('id')->on('kelurahans')->onUpdate('CASCADE');

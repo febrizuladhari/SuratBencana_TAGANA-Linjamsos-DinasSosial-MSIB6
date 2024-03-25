@@ -20,7 +20,7 @@ return new class extends Migration
             $table->enum('jns_kelamin', ['Laki-Laki', 'Perempuan']);
             $table->enum('kehamilan', ['Hamil', 'Tidak Hamil'])->default('Tidak Hamil');
             // $table->char('no_kk', 16)->unique();
-            $table->char('no_kk', 2)->index();
+            $table->char('no_kk', 16)->index();
             $table->foreign('no_kk')->references('no_kk')->on('keluargas')->onUpdate('CASCADE');
             $table->timestamps();
         });

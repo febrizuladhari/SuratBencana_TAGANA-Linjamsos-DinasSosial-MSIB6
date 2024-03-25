@@ -16,7 +16,9 @@ return new class extends Migration
             $table->string('jns_bencana');
             $table->unsignedBigInteger('id_keluarga')->nullable();
             $table->foreign('id_keluarga')->references('id')->on('keluargas')->onUpdate('CASCADE');
+            $table->text('alamat_bencana');
             $table->date('tanggal_bencana');
+            $table->time('waktu_bencana');
             $table->timestamps();
         });
     }
