@@ -38,9 +38,9 @@ class DatabaseSeeder extends Seeder
         // $this->call([
         //     IdentitasSeeder::class,
         // ]);
-        // $this->call([
-        //     UserSeeder::class,
-        // ]);
+        $this->call([
+            UserSeeder::class,
+        ]);
         // $this->call([
         //     DetailBantuanSeeder::class,
         // ]);
